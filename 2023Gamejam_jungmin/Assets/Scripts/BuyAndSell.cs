@@ -75,7 +75,7 @@ public class BuyAndSell : MonoBehaviour
             PlanetSet p = FindObjectOfType<PlanetSetting>().planets[i];
             if (p.planetName.ToString() == planetNameText.text)
             {
-                if (FindObjectOfType<PlanetSetting>().planets[i - 1].Count == 0)
+                if ( i!=0 && FindObjectOfType<PlanetSetting>().planets[i - 1].Count == 0)
                 {
                     FindObjectOfType<ErrorIMG>().PrintErrorMessage("이전 행성을 사야합니다!!");
                     return;
@@ -87,7 +87,7 @@ public class BuyAndSell : MonoBehaviour
                     return;
                 }
                 FindObjectOfType<PlanetSetting>().planets[i].Count += buyCount;
-                countText.text = $"{FindObjectOfType<PlanetSetting>().planets[i].Count}C";
+                countText.text = $"{FindObjectOfType<PlanetSetting>().planets[i].Count}개";
                 FindObjectOfType<PlanetSetting>().gold -= buyCount * p.Price;
                 goldText.text = $"{FindObjectOfType<PlanetSetting>().gold}$";
                 buyCount = 1;
