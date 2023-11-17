@@ -61,7 +61,7 @@ public class GetPlanet : MonoBehaviour
                 textName.text = $"{p.planetName}";
                 textbuyPrice.text = $"{p.Price}$";
                 textsellPrice.text = $"{p.Price}$";
-                textCount.text = $"{p.Count}C";
+                textCount.text = $"{p.Count}°³";
                 
             }
         }

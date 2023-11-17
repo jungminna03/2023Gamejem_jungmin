@@ -31,17 +31,17 @@ public class BuyAndSell : MonoBehaviour
                 if (FindObjectOfType<PlanetSetting>().gold - buyCount * p.Price < 0)
                 {
                     buyCount -= num;
-                    FindObjectOfType<ErrorIMG>().PrintErrorMessage("Not Monney");
+                    FindObjectOfType<ErrorIMG>().PrintErrorMessage("구매할 돈이 없습니다!!");
                     return;
                 }
                 if (p.Count + buyCount > 100)
                 {
                     buyCount = 100 - p.Count;
-                    buytext.text = $"buy: {buyCount}";
-                    FindObjectOfType<ErrorIMG>().PrintErrorMessage("Max Buy Count");
+                    buytext.text = $"구매: {buyCount}";
+                    FindObjectOfType<ErrorIMG>().PrintErrorMessage("최대로 살 수 있는 갯수입니다!!");
                     return;
                 }
-                buytext.text = $"buy: {buyCount}";
+                buytext.text = $"구매: {buyCount}";
             }
         }
     }
@@ -57,14 +57,14 @@ public class BuyAndSell : MonoBehaviour
                 if (p.Count - sellCount < 1)
                 {
                     sellCount = p.Count-1;
-                    FindObjectOfType<ErrorIMG>().PrintErrorMessage("Max Sell count");
+                    FindObjectOfType<ErrorIMG>().PrintErrorMessage("최대로 판매 할 수 있는 갯수입니다!!");
                     Debug.Log("최대 판매 갯수");
                     if (sellCount <= 0)
                         sellCount = 1;
-                    selltext.text = $"sell: {sellCount}";
+                    selltext.text = $"판매: {sellCount}";
                     return;
                 }
-                selltext.text = $"sell: {sellCount}";
+                selltext.text = $"판매: {sellCount}";
             }
         }
     }
@@ -77,12 +77,12 @@ public class BuyAndSell : MonoBehaviour
             {
                 if (FindObjectOfType<PlanetSetting>().planets[i - 1].Count == 0)
                 {
-                    FindObjectOfType<ErrorIMG>().PrintErrorMessage("You Must Buy Before Planet");
+                    FindObjectOfType<ErrorIMG>().PrintErrorMessage("이전 행성을 사야합니다!!");
                     return;
                 }
                 if (p.Count + buyCount > 100)
                 {
-                    FindObjectOfType<ErrorIMG>().PrintErrorMessage("Max buy count");
+                    FindObjectOfType<ErrorIMG>().PrintErrorMessage("최대로 살 수 있는 갯수입니다!!");
                     Debug.Log("최대 구매 갯수");
                     return;
                 }
@@ -91,7 +91,7 @@ public class BuyAndSell : MonoBehaviour
                 FindObjectOfType<PlanetSetting>().gold -= buyCount * p.Price;
                 goldText.text = $"{FindObjectOfType<PlanetSetting>().gold}$";
                 buyCount = 1;
-                buytext.text = $"buy: {buyCount}";
+                buytext.text = $"구매: {buyCount}";
             }
         }
     }
@@ -104,25 +104,25 @@ public class BuyAndSell : MonoBehaviour
             {
                 if (p.Count - sellCount < 1)
                 {
-                    FindObjectOfType<ErrorIMG>().PrintErrorMessage("Max Sell count");
+                    FindObjectOfType<ErrorIMG>().PrintErrorMessage("최대로 판매 할 수 있는 갯수입니다!!");
                     Debug.Log("최대 판매 갯수");
                     return;
                 }
                 FindObjectOfType<PlanetSetting>().planets[i].Count -= sellCount;
-                countText.text = $"{FindObjectOfType<PlanetSetting>().planets[i].Count}C";
+                countText.text = $"{FindObjectOfType<PlanetSetting>().planets[i].Count}개";
                 FindObjectOfType<PlanetSetting>().gold += sellCount * (p.Price);
                 goldText.text = $"{FindObjectOfType<PlanetSetting>().gold}$";
                 sellCount = 1;
-                selltext.text = $"sell: {sellCount}";
+                selltext.text = $"판매: {sellCount}";
             }
         }
     }
     public void Set()
     {
         buyCount = 1;
-        buytext.text = $"buy: {buyCount}";
+        buytext.text = $"구매: {buyCount}";
         sellCount = 1;
-        selltext.text = $"sell: {sellCount}";
+        selltext.text = $"판매: {sellCount}";
     }
 
 
