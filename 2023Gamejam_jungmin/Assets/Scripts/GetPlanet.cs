@@ -41,5 +41,11 @@ public class GetPlanet : MonoBehaviour
     private void SelectedPlanet(PlanetName planetName)
     {
         Debug.Log(planetName);
+        
+    }
+
+    public void FinshBuying()
+    {
+        fullCanvas.gameObject.SetActive(false);
     }
 }
