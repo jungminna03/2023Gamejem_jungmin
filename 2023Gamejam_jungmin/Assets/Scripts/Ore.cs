@@ -25,6 +25,5 @@ public class Ore : MonoBehaviour
 
             ScoreManager.Instance.AddScore(_point);
         }
-
     }
 }

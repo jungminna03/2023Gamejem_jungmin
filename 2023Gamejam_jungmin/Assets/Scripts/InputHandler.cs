@@ -5,13 +5,10 @@ using UnityEngine;
 public class InputHandler : MonoBehaviour
 {
     Spawner _spawner;
-
     public GameObject _currentOre;
-
-    [SerializeField] float _fallSpeed;
     [SerializeField] float _horizontalSpeed = 0.001f;
-
     [SerializeField] bool _isSelect;
+
     private void Awake()
     {
         _spawner = FindObjectOfType<Spawner>();
@@ -55,6 +52,7 @@ public class InputHandler : MonoBehaviour
                 _currentOre.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
                 _currentOre = null;
                 StartCoroutine(_spawner.SpawnOre());
+                _isSelect = false;
             }
         }
     }

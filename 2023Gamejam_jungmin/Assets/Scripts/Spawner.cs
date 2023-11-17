@@ -8,6 +8,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] float _spawnWaitTime = 0.5f;
 
     [SerializeField] GameObject _currnetOre;
+    [SerializeField] GameObject _nextOre;
 
     [SerializeField] GameObject[] _ableOres;
 
@@ -17,13 +18,14 @@ public class Spawner : MonoBehaviour
     }
     private void Start()
     {
-        StartCoroutine(SpawnOre());
+        StartCoroutine(FirstSpawnOre());
     }
     public IEnumerator SpawnOre()
     {
         yield return new WaitForSeconds(_spawnWaitTime);
 
-        _currnetOre = RendomOre();
+        _currnetOre = _nextOre;
+        _nextOre = RandomOre();
 
         GameObject go = Instantiate(_currnetOre, gameObject.transform);
         _inputHandler._currentOre = go;
@@ -31,7 +33,20 @@ public class Spawner : MonoBehaviour
         yield return null;
     }
 
-    public GameObject RendomOre()
+    public IEnumerator FirstSpawnOre()
+    {
+        yield return new WaitForSeconds(_spawnWaitTime);
+
+        _currnetOre = RandomOre();
+        _nextOre = RandomOre();
+
+        GameObject go = Instantiate(_currnetOre, gameObject.transform);
+        _inputHandler._currentOre = go;
+
+        yield return null;
+    }
+
+    GameObject RandomOre()
     {
         int rand = 100 / _ableOres.Length;
         int weight = rand;

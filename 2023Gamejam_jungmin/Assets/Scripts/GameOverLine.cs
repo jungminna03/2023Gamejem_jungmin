@@ -5,12 +5,15 @@ using UnityEngine;
 public class GameOverLine : MonoBehaviour
 {
     [SerializeField] GameObject _gameOverUI;
+    [SerializeField] Transform _gameOverBar;
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<Ore>())
+        if (collision.gameObject.GetComponent<Ore>() != null)
         {
-            if (gameObject.transform.position.y <= gameObject.transform.position.y + collision.gameObject.GetComponent<CircleCollider2D>().offset.y * 2)
+            if (_gameOverBar.transform.position.y < collision.transform.position.y &&
+                _gameOverBar.transform.position.y < _gameOverBar.transform.position.y + collision.gameObject.GetComponent<CircleCollider2D>().radius * 2)
             {
+                Debug.Log(collision.transform.position);
                 _gameOverUI.SetActive(true);
             }
         }
