@@ -14,7 +14,8 @@ public class GetPlanet : MonoBehaviour
     [SerializeField]
     private Canvas fullCanvas;
 
-
+    [SerializeField]
+    private TextMeshProUGUI textName;
     [SerializeField]
     private TextMeshProUGUI textbuyPrice;
     [SerializeField]
@@ -57,17 +58,13 @@ public class GetPlanet : MonoBehaviour
             PlanetSet p = FindObjectOfType<PlanetSetting>().planets[i];
             if (p.planetName== planetName)
             {
+                textName.text = $"{p.planetName}";
                 textbuyPrice.text = $"{p.Price}$";
-                textsellPrice.text = $"{p.Price-1}$";
+                textsellPrice.text = $"{p.Price}$";
                 textCount.text = $"{p.Count}C";
                 
             }
         }
         
-    }
-
-    public void FinshBuying()
-    {
-        fullCanvas.gameObject.SetActive(false);
     }
 }
