@@ -74,6 +74,8 @@ public class BuyAndSell : MonoBehaviour
             PlanetSet p = FindObjectOfType<PlanetSetting>().planets[i];
             if (p.planetName.ToString() == planetNameText.text)
             {
+                if (FindObjectOfType<PlanetSetting>().planets[i - 1].Count == 0)
+                    return;
                 if (p.Count + buyCount > 100)
                 {
                     Debug.Log("최대 구매 갯수");
