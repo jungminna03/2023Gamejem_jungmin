@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2784114834563312744}
   - component: {fileID: -3824979948639253162}
   m_Layer: 0
-  m_Name: Ore3
+  m_Name: Ore10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1388104976928978551}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.045820817, y: -0.48466128, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -97,8 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1e500eeedf2f994d95fee1186f3b045, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _count: 3
-  _nextOre: {fileID: 1388104976928978551, guid: 44fdc4d993138b64fa84530e70349f7e, type: 3}
+  _count: 10
+  _nextOre: {fileID: 1388104976928978551, guid: 4b05c6b243c79344da252f4225c39056, type: 3}
 --- !u!50 &-2784114834563312744
 Rigidbody2D:
   serializedVersion: 4
