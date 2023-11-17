@@ -135,6 +135,8 @@ GameObject:
   - component: {fileID: 37179898}
   - component: {fileID: 37179900}
   - component: {fileID: 37179901}
+  - component: {fileID: 37179903}
+  - component: {fileID: 37179902}
   m_Layer: 0
   m_Name: 1
   m_TagString: Planet
@@ -200,12 +202,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 37179897}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.91, y: -3.79, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.27, y: -3.14, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 865076380}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &37179900
 CircleCollider2D:
@@ -235,7 +237,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 237605bb735257145887c36ddbbeadee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetName: 0
+  planetName: 
+  BuyPrice: 0
+  SellPrice: 0
+  Count: 0
+  PlanetImage: {fileID: 0}
+--- !u!114 &37179902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37179897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 0}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 37179903}
+        m_TargetAssemblyTypeName: DealButton, Assembly-CSharp
+        m_MethodName: OnDealButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &37179903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37179897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54b0315c475f7a54dbe7850c9c8edf17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &47487286
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,7 +524,7 @@ Transform:
   m_LocalScale: {x: 7, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &150035146
 GameObject:
@@ -483,13 +557,13 @@ RectTransform:
   m_Children:
   - {fileID: 1487649931}
   - {fileID: 2082817414}
-  m_Father: {fileID: 710585533}
-  m_RootOrder: 4
+  m_Father: {fileID: 1196604937}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -318, y: -343}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 220, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &150035148
 MonoBehaviour:
@@ -755,8 +829,9 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1734527952}
+  - {fileID: 1306424869}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1127,7 +1202,7 @@ GameObject:
   - component: {fileID: 419805769}
   - component: {fileID: 419805768}
   m_Layer: 5
-  m_Name: Button
+  m_Name: AmountIncrease1Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1197,9 +1272,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 710585534}
-        m_TargetAssemblyTypeName: BuyAndSell, Assembly-CSharp
-        m_MethodName: SellAdd
+      - m_Target: {fileID: 1196604940}
+        m_TargetAssemblyTypeName: PurchaseWindow, Assembly-CSharp
+        m_MethodName: ChangeSellCount
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1394,7 +1469,7 @@ GameObject:
   - component: {fileID: 489343766}
   - component: {fileID: 489343765}
   m_Layer: 5
-  m_Name: Button
+  m_Name: AmountIncrease1Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1464,9 +1539,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 710585534}
-        m_TargetAssemblyTypeName: BuyAndSell, Assembly-CSharp
-        m_MethodName: BuyAdd
+      - m_Target: {fileID: 1196604940}
+        m_TargetAssemblyTypeName: PurchaseWindow, Assembly-CSharp
+        m_MethodName: ChangePurchaseCount
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1526,6 +1601,8 @@ GameObject:
   - component: {fileID: 535095607}
   - component: {fileID: 535095606}
   - component: {fileID: 535095605}
+  - component: {fileID: 535095610}
+  - component: {fileID: 535095609}
   m_Layer: 0
   m_Name: 6
   m_TagString: Planet
@@ -1545,7 +1622,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 237605bb735257145887c36ddbbeadee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetName: 5
+  planetName: 
+  BuyPrice: 0
+  SellPrice: 0
+  Count: 0
+  PlanetImage: {fileID: 0}
 --- !u!58 &535095606
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1620,13 +1701,81 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 535095604}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.64, y: 3.84, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.3, y: 3.51, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_Father: {fileID: 865076380}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &535095609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535095604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 0}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 535095610}
+        m_TargetAssemblyTypeName: DealButton, Assembly-CSharp
+        m_MethodName: OnDealButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &535095610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535095604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54b0315c475f7a54dbe7850c9c8edf17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &542539816
 GameObject:
   m_ObjectHideFlags: 0
@@ -1640,7 +1789,7 @@ GameObject:
   - component: {fileID: 542539819}
   - component: {fileID: 542539818}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: AmountIncrease10Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1710,9 +1859,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 710585534}
-        m_TargetAssemblyTypeName: BuyAndSell, Assembly-CSharp
-        m_MethodName: SellAdd
+      - m_Target: {fileID: 1196604940}
+        m_TargetAssemblyTypeName: PurchaseWindow, Assembly-CSharp
+        m_MethodName: ChangeSellCount
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1772,6 +1921,8 @@ GameObject:
   - component: {fileID: 543391404}
   - component: {fileID: 543391403}
   - component: {fileID: 543391402}
+  - component: {fileID: 543391407}
+  - component: {fileID: 543391406}
   m_Layer: 0
   m_Name: 10
   m_TagString: Planet
@@ -1791,7 +1942,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 237605bb735257145887c36ddbbeadee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetName: 9
+  planetName: 
+  BuyPrice: 0
+  SellPrice: 0
+  Count: 0
+  PlanetImage: {fileID: 0}
 --- !u!58 &543391403
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1866,13 +2021,81 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543391401}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.37, y: -3.83, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 7.55, y: -3.78, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_Father: {fileID: 865076380}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &543391406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543391401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 0}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 543391407}
+        m_TargetAssemblyTypeName: DealButton, Assembly-CSharp
+        m_MethodName: OnDealButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &543391407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543391401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54b0315c475f7a54dbe7850c9c8edf17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &574346186
 GameObject:
   m_ObjectHideFlags: 0
@@ -2019,6 +2242,8 @@ GameObject:
   - component: {fileID: 595333405}
   - component: {fileID: 595333404}
   - component: {fileID: 595333403}
+  - component: {fileID: 595333408}
+  - component: {fileID: 595333407}
   m_Layer: 0
   m_Name: 5
   m_TagString: Planet
@@ -2038,7 +2263,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 237605bb735257145887c36ddbbeadee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetName: 4
+  planetName: 
+  BuyPrice: 0
+  SellPrice: 0
+  Count: 0
+  PlanetImage: {fileID: 0}
 --- !u!58 &595333404
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2113,13 +2342,81 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 595333402}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.37, y: 3.84, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.5400003, y: 3.54, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_Father: {fileID: 865076380}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &595333407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595333402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 0}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 595333408}
+        m_TargetAssemblyTypeName: DealButton, Assembly-CSharp
+        m_MethodName: OnDealButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &595333408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595333402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54b0315c475f7a54dbe7850c9c8edf17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &625242138
 GameObject:
   m_ObjectHideFlags: 0
@@ -2145,19 +2442,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 625242138}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.55920666, y: 0.072850056, z: 0.30836}
   m_Children:
   - {fileID: 574346187}
   - {fileID: 1730869592}
-  m_Father: {fileID: 710585533}
-  m_RootOrder: 6
+  m_Father: {fileID: 1034727201}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 304, y: 63}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1820, y: 980}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &625242140
 MonoBehaviour:
@@ -2209,14 +2506,13 @@ GameObject:
   - component: {fileID: 710585532}
   - component: {fileID: 710585531}
   - component: {fileID: 710585530}
-  - component: {fileID: 710585534}
   m_Layer: 5
   m_Name: FullMonitorCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &710585530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2290,40 +2586,14 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1196604937}
-  - {fileID: 1174864397}
-  - {fileID: 1441061292}
-  - {fileID: 1451075172}
-  - {fileID: 150035147}
-  - {fileID: 875683025}
-  - {fileID: 625242139}
-  - {fileID: 1815163064}
-  - {fileID: 812652028}
-  - {fileID: 2060560848}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &710585534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 710585529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c647b086fd66aa8449d873e4656e0f7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buytext: {fileID: 895725441}
-  selltext: {fileID: 1515832499}
-  planetNameText: {fileID: 1441061293}
-  goldText: {fileID: 2082817415}
-  countText: {fileID: 1567475049}
 --- !u!1 &713993201
 GameObject:
   m_ObjectHideFlags: 0
@@ -2388,7 +2658,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &757048232
 GameObject:
@@ -2401,7 +2671,7 @@ GameObject:
   - component: {fileID: 757048234}
   - component: {fileID: 757048233}
   m_Layer: 0
-  m_Name: PlanetSetting
+  m_Name: PlayerInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2419,37 +2689,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd87dbf9371909f4cbf936745c029317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gold: 102
+  Gold: 0
   planets:
-  - planetName: 0
-    Price: 1
+  - Name: 
     Count: 0
-  - planetName: 1
-    Price: 2
+  - Name: 
     Count: 0
-  - planetName: 2
-    Price: 3
+  - Name: 
     Count: 0
-  - planetName: 3
-    Price: 4
+  - Name: 
     Count: 0
-  - planetName: 4
-    Price: 5
+  - Name: 
     Count: 0
-  - planetName: 5
-    Price: 6
+  - Name: 
     Count: 0
-  - planetName: 6
-    Price: 7
+  - Name: 
     Count: 0
-  - planetName: 7
-    Price: 8
+  - Name: 
     Count: 0
-  - planetName: 8
-    Price: 9
+  - Name: 
     Count: 0
-  - planetName: 9
-    Price: 10
+  - Name: 
     Count: 0
 --- !u!4 &757048234
 Transform:
@@ -2463,7 +2723,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &812652027
 GameObject:
@@ -2490,19 +2750,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 812652027}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.55920666, y: 0.072850056, z: 0.30836}
   m_Children:
   - {fileID: 2054924293}
   - {fileID: 1871166438}
-  m_Father: {fileID: 710585533}
-  m_RootOrder: 8
+  m_Father: {fileID: 1503840690}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 304, y: -104}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1820, y: 980}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &812652029
 MonoBehaviour:
@@ -2676,6 +2936,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 827560415}
   m_CullTransparentMesh: 1
+--- !u!1 &865076379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 865076380}
+  m_Layer: 0
+  m_Name: SelectPlanets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &865076380
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865076379}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 37179899}
+  - {fileID: 1737117807}
+  - {fileID: 1881163030}
+  - {fileID: 867817900}
+  - {fileID: 595333406}
+  - {fileID: 535095608}
+  - {fileID: 1237896674}
+  - {fileID: 1756041707}
+  - {fileID: 2111628895}
+  - {fileID: 543391405}
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &867817896
 GameObject:
   m_ObjectHideFlags: 0
@@ -2688,6 +2993,8 @@ GameObject:
   - component: {fileID: 867817899}
   - component: {fileID: 867817898}
   - component: {fileID: 867817897}
+  - component: {fileID: 867817902}
+  - component: {fileID: 867817901}
   m_Layer: 0
   m_Name: 4
   m_TagString: Planet
@@ -2707,7 +3014,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 237605bb735257145887c36ddbbeadee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetName: 3
+  planetName: 
+  BuyPrice: 0
+  SellPrice: 0
+  Count: 0
+  PlanetImage: {fileID: 0}
 --- !u!58 &867817898
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2782,13 +3093,81 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 867817896}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.84, y: 2.85, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.8500006, y: 2.75, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 865076380}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &867817901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867817896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 0}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 867817902}
+        m_TargetAssemblyTypeName: DealButton, Assembly-CSharp
+        m_MethodName: OnDealButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &867817902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867817896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54b0315c475f7a54dbe7850c9c8edf17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &875683024
 GameObject:
   m_ObjectHideFlags: 0
@@ -2801,7 +3180,7 @@ GameObject:
   - component: {fileID: 875683027}
   - component: {fileID: 875683026}
   m_Layer: 5
-  m_Name: PricePanel
+  m_Name: BuyPricePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2814,19 +3193,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 875683024}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5623771, y: 0.089576006, z: 0.31845}
   m_Children:
   - {fileID: 388180004}
   - {fileID: 2020630174}
-  m_Father: {fileID: 710585533}
-  m_RootOrder: 5
+  m_Father: {fileID: 1034727201}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 309, y: 151}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1820, y: 980}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &875683026
 MonoBehaviour:
@@ -3146,8 +3525,9 @@ GameObject:
   - component: {fileID: 964316498}
   - component: {fileID: 964316497}
   - component: {fileID: 964316496}
+  - component: {fileID: 964316499}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: BuyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3217,9 +3597,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 710585534}
-        m_TargetAssemblyTypeName: BuyAndSell, Assembly-CSharp
-        m_MethodName: Buy
+      - m_Target: {fileID: 964316499}
+        m_TargetAssemblyTypeName: BuyButton, Assembly-CSharp
+        m_MethodName: OnBuyButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3267,6 +3647,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 964316494}
   m_CullTransparentMesh: 1
+--- !u!114 &964316499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964316494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157ce471981492547a8c587b291aee01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &980139671
 GameObject:
   m_ObjectHideFlags: 0
@@ -3342,6 +3734,43 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980139671}
   m_CullTransparentMesh: 1
+--- !u!1 &1034727200
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1034727201}
+  m_Layer: 5
+  m_Name: Buy_UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1034727201
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034727200}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 875683025}
+  - {fileID: 625242139}
+  m_Father: {fileID: 1196604937}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1147671409
 GameObject:
   m_ObjectHideFlags: 0
@@ -3476,17 +3905,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1147671409}
   m_CullTransparentMesh: 1
---- !u!114 &1153182898 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1171906770985835580, guid: 87cb7bc32d41cb34e9ed51b17c5ad1f2, type: 3}
-  m_PrefabInstance: {fileID: 1171906769983664270}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf51030ae53e06e458bb9c8ce2bf48b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1167525406
 GameObject:
   m_ObjectHideFlags: 0
@@ -3646,11 +4064,11 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1174864396}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 710585533}
+  m_Father: {fileID: 1196604937}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3766,8 +4184,9 @@ GameObject:
   - component: {fileID: 1196604937}
   - component: {fileID: 1196604939}
   - component: {fileID: 1196604938}
+  - component: {fileID: 1196604940}
   m_Layer: 5
-  m_Name: FullScreenIMG
+  m_Name: PurchaseWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3785,6 +4204,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2054428232}
+  - {fileID: 1174864397}
+  - {fileID: 1441061292}
+  - {fileID: 1034727201}
+  - {fileID: 1503840690}
+  - {fileID: 150035147}
+  - {fileID: 2060560848}
+  - {fileID: 1451075172}
   m_Father: {fileID: 710585533}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3831,6 +4257,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196604936}
   m_CullTransparentMesh: 1
+--- !u!114 &1196604940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196604936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c647b086fd66aa8449d873e4656e0f7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _planetNameText: {fileID: 1441061293}
+  _planetImage: {fileID: 2054428233}
+  _buyText: {fileID: 388180005}
+  _sellText: {fileID: 1167525408}
+  _goldText: {fileID: 1487649932}
+  _countText: {fileID: 939646599}
+  _buyPrice: 0
+  _sellPrice: 0
+  _buyCount: 0
+  _sellCount: 0
 --- !u!1 &1237896670
 GameObject:
   m_ObjectHideFlags: 0
@@ -3843,6 +4291,8 @@ GameObject:
   - component: {fileID: 1237896673}
   - component: {fileID: 1237896672}
   - component: {fileID: 1237896671}
+  - component: {fileID: 1237896676}
+  - component: {fileID: 1237896675}
   m_Layer: 0
   m_Name: 7
   m_TagString: Planet
@@ -3862,7 +4312,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 237605bb735257145887c36ddbbeadee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetName: 6
+  planetName: 
+  BuyPrice: 0
+  SellPrice: 0
+  Count: 0
+  PlanetImage: {fileID: 0}
 --- !u!58 &1237896672
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3937,13 +4391,81 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237896670}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.33, y: 2.39, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.6399999, y: 2.5, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_Father: {fileID: 865076380}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1237896675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237896670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 0}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1237896676}
+        m_TargetAssemblyTypeName: DealButton, Assembly-CSharp
+        m_MethodName: OnDealButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1237896676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237896670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54b0315c475f7a54dbe7850c9c8edf17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1253613037
 GameObject:
   m_ObjectHideFlags: 0
@@ -4091,7 +4613,7 @@ GameObject:
   - component: {fileID: 1275114553}
   - component: {fileID: 1275114552}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: AmountIncrease10Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4161,9 +4683,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 710585534}
-        m_TargetAssemblyTypeName: BuyAndSell, Assembly-CSharp
-        m_MethodName: BuyAdd
+      - m_Target: {fileID: 1196604940}
+        m_TargetAssemblyTypeName: PurchaseWindow, Assembly-CSharp
+        m_MethodName: ChangePurchaseCount
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4299,19 +4821,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306424865}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1448473137}
-  m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_Father: {fileID: 234001209}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 960, y: 540}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1306424870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4339,7 +4861,7 @@ GameObject:
   - component: {fileID: 1386259687}
   - component: {fileID: 1386259686}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: SellButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4409,9 +4931,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 710585534}
-        m_TargetAssemblyTypeName: BuyAndSell, Assembly-CSharp
-        m_MethodName: Sell
+      - m_Target: {fileID: 1196604940}
+        m_TargetAssemblyTypeName: PurchaseWindow, Assembly-CSharp
+        m_MethodName: SellPlanet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4618,11 +5140,11 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1441061291}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 710585533}
+  m_Father: {fileID: 1196604937}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4739,7 +5261,7 @@ GameObject:
   - component: {fileID: 1448473139}
   - component: {fileID: 1448473138}
   m_Layer: 5
-  m_Name: Image
+  m_Name: ErrorImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4817,7 +5339,7 @@ GameObject:
   - component: {fileID: 1451075174}
   - component: {fileID: 1451075173}
   m_Layer: 5
-  m_Name: FinishBuyingBTNS
+  m_Name: FinishDealButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4830,13 +5352,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1451075171}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.5776434, y: 2.5776434, z: 2.5776434}
   m_Children:
   - {fileID: 1394026607}
-  m_Father: {fileID: 710585533}
-  m_RootOrder: 3
+  m_Father: {fileID: 1196604937}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4887,7 +5409,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 710585534}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BuyAndSell, Assembly-CSharp
         m_MethodName: Set
         m_Mode: 1
@@ -5230,7 +5752,7 @@ GameObject:
   - component: {fileID: 1494240608}
   - component: {fileID: 1494240607}
   m_Layer: 5
-  m_Name: Button
+  m_Name: AmountReduce10Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5300,9 +5822,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 710585534}
-        m_TargetAssemblyTypeName: BuyAndSell, Assembly-CSharp
-        m_MethodName: SellAdd
+      - m_Target: {fileID: 1196604940}
+        m_TargetAssemblyTypeName: PurchaseWindow, Assembly-CSharp
+        m_MethodName: ChangeSellCount
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5350,6 +5872,43 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494240605}
   m_CullTransparentMesh: 1
+--- !u!1 &1503840689
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1503840690}
+  m_Layer: 5
+  m_Name: Sell_UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1503840690
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503840689}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1815163064}
+  - {fileID: 812652028}
+  m_Father: {fileID: 1196604937}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1515832497
 GameObject:
   m_ObjectHideFlags: 0
@@ -5497,7 +6056,7 @@ GameObject:
   - component: {fileID: 1532705352}
   - component: {fileID: 1532705351}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: AmountReduce1Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5567,9 +6126,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 710585534}
-        m_TargetAssemblyTypeName: BuyAndSell, Assembly-CSharp
-        m_MethodName: SellAdd
+      - m_Target: {fileID: 1196604940}
+        m_TargetAssemblyTypeName: PurchaseWindow, Assembly-CSharp
+        m_MethodName: ChangeSellCount
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5751,55 +6310,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1567475047}
   m_CullTransparentMesh: 1
---- !u!1 &1673009468
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1673009470}
-  - component: {fileID: 1673009469}
-  m_Layer: 0
-  m_Name: PlanetSelector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1673009469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1673009468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54b0315c475f7a54dbe7850c9c8edf17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fullCanvas: {fileID: 710585532}
-  textName: {fileID: 1441061293}
-  textbuyPrice: {fileID: 2020630175}
-  textsellPrice: {fileID: 47487288}
-  textCount: {fileID: 1567475049}
-  textCoin: {fileID: 2082817415}
---- !u!4 &1673009470
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1673009468}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.229814, y: 0.6904165, z: -10.818115}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1730869591
 GameObject:
   m_ObjectHideFlags: 0
@@ -5812,7 +6322,7 @@ GameObject:
   - component: {fileID: 1730869594}
   - component: {fileID: 1730869593}
   m_Layer: 5
-  m_Name: BuyCountBTNS
+  m_Name: BuyCountButtons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5892,6 +6402,7 @@ GameObject:
   - component: {fileID: 1734527955}
   - component: {fileID: 1734527954}
   - component: {fileID: 1734527953}
+  - component: {fileID: 1734527956}
   m_Layer: 5
   m_Name: InGameButton
   m_TagString: Untagged
@@ -5913,11 +6424,11 @@ RectTransform:
   m_Father: {fileID: 234001209}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -100, y: 100}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 60}
-  m_Pivot: {x: 1, y: 0}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1734527953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5962,7 +6473,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1153182898}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SceneTransition, Assembly-CSharp
         m_MethodName: OnInGame
         m_Mode: 1
@@ -6012,6 +6523,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1734527951}
   m_CullTransparentMesh: 1
+--- !u!114 &1734527956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734527951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf51030ae53e06e458bb9c8ce2bf48b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inGameSceneName: 
+  LobbySceneName: 
 --- !u!1 &1737117803
 GameObject:
   m_ObjectHideFlags: 0
@@ -6024,6 +6549,8 @@ GameObject:
   - component: {fileID: 1737117806}
   - component: {fileID: 1737117805}
   - component: {fileID: 1737117804}
+  - component: {fileID: 1737117809}
+  - component: {fileID: 1737117808}
   m_Layer: 0
   m_Name: 2
   m_TagString: Planet
@@ -6043,7 +6570,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 237605bb735257145887c36ddbbeadee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetName: 1
+  planetName: 
+  BuyPrice: 0
+  SellPrice: 0
+  Count: 0
+  PlanetImage: {fileID: 0}
 --- !u!58 &1737117805
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6118,13 +6649,81 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1737117803}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.71, y: -1.48, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7.5200005, y: -0.9400002, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 865076380}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1737117808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737117803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 0}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1737117809}
+        m_TargetAssemblyTypeName: DealButton, Assembly-CSharp
+        m_MethodName: OnDealButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1737117809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737117803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54b0315c475f7a54dbe7850c9c8edf17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1756041703
 GameObject:
   m_ObjectHideFlags: 0
@@ -6137,6 +6736,8 @@ GameObject:
   - component: {fileID: 1756041706}
   - component: {fileID: 1756041705}
   - component: {fileID: 1756041704}
+  - component: {fileID: 1756041709}
+  - component: {fileID: 1756041708}
   m_Layer: 0
   m_Name: 8
   m_TagString: Planet
@@ -6156,7 +6757,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 237605bb735257145887c36ddbbeadee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetName: 7
+  planetName: 
+  BuyPrice: 0
+  SellPrice: 0
+  Count: 0
+  PlanetImage: {fileID: 0}
 --- !u!58 &1756041705
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6231,13 +6836,81 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1756041703}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.92, y: 0.3, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.2599998, y: 0.38000005, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_Father: {fileID: 865076380}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1756041708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756041703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 0}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1756041709}
+        m_TargetAssemblyTypeName: DealButton, Assembly-CSharp
+        m_MethodName: OnDealButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1756041709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756041703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54b0315c475f7a54dbe7850c9c8edf17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1815163063
 GameObject:
   m_ObjectHideFlags: 0
@@ -6263,19 +6936,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1815163063}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.55920666, y: 0.072850056, z: 0.30836}
   m_Children:
   - {fileID: 1167525407}
   - {fileID: 47487287}
-  m_Father: {fileID: 710585533}
-  m_RootOrder: 7
+  m_Father: {fileID: 1503840690}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 304, y: -16}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1820, y: 980}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1815163065
 MonoBehaviour:
@@ -6462,7 +7135,7 @@ GameObject:
   - component: {fileID: 1850684726}
   - component: {fileID: 1850684725}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: AmountReduce1Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6532,9 +7205,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 710585534}
-        m_TargetAssemblyTypeName: BuyAndSell, Assembly-CSharp
-        m_MethodName: BuyAdd
+      - m_Target: {fileID: 1196604940}
+        m_TargetAssemblyTypeName: PurchaseWindow, Assembly-CSharp
+        m_MethodName: ChangePurchaseCount
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6594,7 +7267,7 @@ GameObject:
   - component: {fileID: 1871166440}
   - component: {fileID: 1871166439}
   m_Layer: 5
-  m_Name: SellCountBTNS
+  m_Name: SellCountButtons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6674,6 +7347,8 @@ GameObject:
   - component: {fileID: 1881163029}
   - component: {fileID: 1881163028}
   - component: {fileID: 1881163027}
+  - component: {fileID: 1881163032}
+  - component: {fileID: 1881163031}
   m_Layer: 0
   m_Name: 3
   m_TagString: Planet
@@ -6693,7 +7368,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 237605bb735257145887c36ddbbeadee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetName: 2
+  planetName: 
+  BuyPrice: 0
+  SellPrice: 0
+  Count: 0
+  PlanetImage: {fileID: 0}
 --- !u!58 &1881163028
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6768,13 +7447,81 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1881163026}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.7, y: 0.99, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.2400007, y: 1.3499999, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 865076380}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1881163031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881163026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 0}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1881163032}
+        m_TargetAssemblyTypeName: DealButton, Assembly-CSharp
+        m_MethodName: OnDealButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1881163032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881163026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54b0315c475f7a54dbe7850c9c8edf17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1973333778
 GameObject:
   m_ObjectHideFlags: 0
@@ -6922,7 +7669,7 @@ GameObject:
   - component: {fileID: 1993316110}
   - component: {fileID: 1993316109}
   m_Layer: 5
-  m_Name: Button
+  m_Name: AmountReduce10Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6992,9 +7739,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 710585534}
-        m_TargetAssemblyTypeName: BuyAndSell, Assembly-CSharp
-        m_MethodName: BuyAdd
+      - m_Target: {fileID: 1196604940}
+        m_TargetAssemblyTypeName: PurchaseWindow, Assembly-CSharp
+        m_MethodName: ChangePurchaseCount
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7188,7 +7935,7 @@ GameObject:
   - component: {fileID: 2054428234}
   - component: {fileID: 2054428233}
   m_Layer: 5
-  m_Name: PaneIMG
+  m_Name: ItemImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7263,7 +8010,7 @@ GameObject:
   - component: {fileID: 2054924295}
   - component: {fileID: 2054924294}
   m_Layer: 5
-  m_Name: PlaneSellCountText
+  m_Name: PlanetSellCountText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7397,7 +8144,7 @@ GameObject:
   - component: {fileID: 2060560850}
   - component: {fileID: 2060560849}
   m_Layer: 5
-  m_Name: LandCountPanel
+  m_Name: PlanetCountPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7410,19 +8157,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2060560847}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5583729, y: 0.08004064, z: 0.21188}
   m_Children:
   - {fileID: 939646598}
   - {fileID: 1567475048}
-  m_Father: {fileID: 710585533}
-  m_RootOrder: 9
+  m_Father: {fileID: 1196604937}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 309, y: -191}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 220, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2060560849
 MonoBehaviour:
@@ -7608,6 +8355,8 @@ GameObject:
   - component: {fileID: 2111628894}
   - component: {fileID: 2111628893}
   - component: {fileID: 2111628892}
+  - component: {fileID: 2111628897}
+  - component: {fileID: 2111628896}
   m_Layer: 0
   m_Name: 9
   m_TagString: Planet
@@ -7627,7 +8376,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 237605bb735257145887c36ddbbeadee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetName: 8
+  planetName: 
+  BuyPrice: 0
+  SellPrice: 0
+  Count: 0
+  PlanetImage: {fileID: 0}
 --- !u!58 &2111628893
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7702,67 +8455,78 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2111628891}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.13, y: -1.6, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.85, y: -1.9099998, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_Father: {fileID: 865076380}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1171906769983664270
-PrefabInstance:
+--- !u!114 &2111628896
+MonoBehaviour:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1171906770985835581, guid: 87cb7bc32d41cb34e9ed51b17c5ad1f2, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1171906770985835581, guid: 87cb7bc32d41cb34e9ed51b17c5ad1f2, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.8468649
-      objectReference: {fileID: 0}
-    - target: {fileID: 1171906770985835581, guid: 87cb7bc32d41cb34e9ed51b17c5ad1f2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.505281
-      objectReference: {fileID: 0}
-    - target: {fileID: 1171906770985835581, guid: 87cb7bc32d41cb34e9ed51b17c5ad1f2, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.22224607
-      objectReference: {fileID: 0}
-    - target: {fileID: 1171906770985835581, guid: 87cb7bc32d41cb34e9ed51b17c5ad1f2, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1171906770985835581, guid: 87cb7bc32d41cb34e9ed51b17c5ad1f2, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1171906770985835581, guid: 87cb7bc32d41cb34e9ed51b17c5ad1f2, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1171906770985835581, guid: 87cb7bc32d41cb34e9ed51b17c5ad1f2, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1171906770985835581, guid: 87cb7bc32d41cb34e9ed51b17c5ad1f2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1171906770985835581, guid: 87cb7bc32d41cb34e9ed51b17c5ad1f2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1171906770985835581, guid: 87cb7bc32d41cb34e9ed51b17c5ad1f2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1171906770985835583, guid: 87cb7bc32d41cb34e9ed51b17c5ad1f2, type: 3}
-      propertyPath: m_Name
-      value: SceneTransition
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 87cb7bc32d41cb34e9ed51b17c5ad1f2, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111628891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 0}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2111628897}
+        m_TargetAssemblyTypeName: DealButton, Assembly-CSharp
+        m_MethodName: OnDealButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2111628897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111628891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54b0315c475f7a54dbe7850c9c8edf17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

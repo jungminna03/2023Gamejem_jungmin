@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Planet : MonoBehaviour
 {
-    [SerializeField]
-    private PlanetName planetName;
-
-    public PlanetName m_PlanetName => planetName;
-
-
+    public string planetName;
+    public int BuyPrice;
+    public int SellPrice;
+    public int Count;
+    public Image PlanetImage;
 }
