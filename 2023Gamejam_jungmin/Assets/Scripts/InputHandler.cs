@@ -37,8 +37,7 @@ public class InputHandler : MonoBehaviour
         {
             if (Input.GetMouseButtonUp(0))
             {
-                _currentOre.GetComponent<Rigidbody>().useGravity = true;
-                // _currentOre.GetComponent<Rigidbody>().velocity = new Vector3(0, _fallSpeed, 0);
+                _currentOre.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
                 _currentOre = null;
                 StartCoroutine(_spawner.SpawnOre());
             }

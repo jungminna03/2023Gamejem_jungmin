@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     InputHandler _inputHandler;
-    [SerializeField] float _spawnWaitTime = 20f;
+    [SerializeField] float _spawnWaitTime = 0.5f;
 
     [SerializeField] GameObject _currnetOre;
 
@@ -21,7 +21,6 @@ public class Spawner : MonoBehaviour
     {
         yield return new WaitForSeconds(_spawnWaitTime);
         GameObject go = Instantiate(_currnetOre, gameObject.transform);
-        go.GetComponent<Rigidbody>().useGravity = false;
         _inputHandler._currentOre = go;
 
         yield return null;
