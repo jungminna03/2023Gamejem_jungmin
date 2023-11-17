@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -12,6 +13,16 @@ public class GetPlanet : MonoBehaviour
 
     [SerializeField]
     private Canvas fullCanvas;
+
+
+    [SerializeField]
+    private TextMeshProUGUI textbuyPrice;
+    [SerializeField]
+    private TextMeshProUGUI textsellPrice;
+    [SerializeField]
+    private TextMeshProUGUI textCount;
+    [SerializeField]
+    private TextMeshProUGUI textCoin;
 
     private void Update()
     {
@@ -40,7 +51,18 @@ public class GetPlanet : MonoBehaviour
 
     private void SelectedPlanet(PlanetName planetName)
     {
-        Debug.Log(planetName);
+        textCoin.text = $"{FindObjectOfType<PlanetSetting>().gold}$" ;
+        for (int i=0; i<10; i++)
+        {
+            PlanetSet p = FindObjectOfType<PlanetSetting>().planets[i];
+            if (p.planetName== planetName)
+            {
+                textbuyPrice.text = $"{p.Price}$";
+                textsellPrice.text = $"{p.Price-1}$";
+                textCount.text = $"{p.Count}C";
+                
+            }
+        }
         
     }
 
