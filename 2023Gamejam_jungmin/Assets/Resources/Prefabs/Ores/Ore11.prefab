@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _count: 11
+  _point: 11
   _nextOre: {fileID: 0}
 --- !u!50 &-2784114834563312744
 Rigidbody2D:
