@@ -8,6 +8,7 @@ public class Ore : MonoBehaviour
 
     [SerializeField] int _point;
     [SerializeField] GameObject _nextOre;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Ore ore = collision.gameObject.GetComponent<Ore>();
@@ -18,12 +19,11 @@ public class Ore : MonoBehaviour
             go.transform.position = transform.position;
             go.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
 
-
             GameObject.Destroy(collision.gameObject);
             GameObject.Destroy(gameObject);
 
 
-            // TODO : 점수 주기
+            ScoreManager.Instance.AddScore(_point);
         }
 
     }
