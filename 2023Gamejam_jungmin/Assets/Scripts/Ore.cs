@@ -6,7 +6,7 @@ public class Ore : MonoBehaviour
 {
     public int _count;
 
-    int _point;
+    [SerializeField] int _point;
     [SerializeField] GameObject _nextOre;
     private void OnCollisionEnter2D(Collision2D collision)
     {
