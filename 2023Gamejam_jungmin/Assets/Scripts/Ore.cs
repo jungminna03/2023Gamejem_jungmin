@@ -14,12 +14,10 @@ public class Ore : MonoBehaviour
 
         if (ore != null && ore._count == _count && _nextOre != null && collision.transform.position.y > transform.position.y)
         {
-            Vector3 middle = transform.position - collision.transform.position;
-            middle = middle / 2;
-            Debug.Log(middle);
+            GameObject go = GameObject.Instantiate(_nextOre);
+            go.transform.position = transform.position;
+            go.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
 
-            GameObject.Instantiate(_nextOre);
-            _nextOre.transform.position = middle;
 
             GameObject.Destroy(collision.gameObject);
             GameObject.Destroy(gameObject);
