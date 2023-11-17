@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class GameOverLine : MonoBehaviour
 {
-    [SerializeField] float _gameOverLimit;
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if(other.ClosestPoint(transform.position).y > gameObject.transform.position.y)
+        if (collision.gameObject.GetComponent<Ore>())
         {
-            Debug.Log(other.ClosestPoint(transform.position).y);
+            if (gameObject.transform.position.y <= gameObject.transform.position.y + collision.gameObject.GetComponent<CircleCollider2D>().offset.y * 2)
+            {
+                Debug.Log("±¤¼® ³ª°¨");
+            }
         }
     }
 }
