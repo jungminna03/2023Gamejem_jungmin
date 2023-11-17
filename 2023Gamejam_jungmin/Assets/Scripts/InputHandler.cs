@@ -25,17 +25,32 @@ public class InputHandler : MonoBehaviour
 
             if(Input.GetAxis("Mouse X") > 0)
             {
-                _currentOre.transform.position += new Vector3(_horizontalSpeed, 0, 0);
+                
+                if (_currentOre.GetComponent<CircleCollider2D>().radius + _currentOre.transform.position.x > 3)
+                {
+                    return;
+                }
+                else
+                {
+                    _currentOre.transform.position += new Vector3(_horizontalSpeed, 0, 0);
+                }
             }
             else if(Input.GetAxis("Mouse X") < 0) 
             {
-                _currentOre.transform.position += new Vector3(_horizontalSpeed * ( -1 ), 0, 0);
+                if (-_currentOre.GetComponent<CircleCollider2D>().radius + _currentOre.transform.position.x < -3)
+                {
+                    return;
+                }
+                else
+                {
+                    _currentOre.transform.position += new Vector3(_horizontalSpeed * (-1), 0, 0);
+                }
             }
         }
 
         if(_isSelect)
         {
-            if (Input.GetMouseButtonUp(0))
+            if (Input.GetMouseButtonUp(0) && _currentOre != null)
             {
                 _currentOre.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
                 _currentOre = null;
