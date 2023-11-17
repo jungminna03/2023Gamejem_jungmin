@@ -253,7 +253,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnWaitTime: 0.5
-  _currnetOre: {fileID: 1388104976928978551, guid: 051515611c46ed44683a8448cedb9556, type: 3}
+  _currnetOre: {fileID: 0}
+  _ableOres:
+  - {fileID: 1388104976928978551, guid: 051515611c46ed44683a8448cedb9556, type: 3}
+  - {fileID: 1388104976928978551, guid: 19e074e2f5531f14b8950d82c9924a10, type: 3}
+  - {fileID: 1388104976928978551, guid: 9ac5ee43e4aa46f41bf5ad618f9807f3, type: 3}
+  - {fileID: 1388104976928978551, guid: 44fdc4d993138b64fa84530e70349f7e, type: 3}
+  - {fileID: 1388104976928978551, guid: 9426b0bf48e6df54787232a5b11fa019, type: 3}
 --- !u!4 &817624825
 Transform:
   m_ObjectHideFlags: 0
