@@ -31,14 +31,14 @@ public class BuyAndSell : MonoBehaviour
                 if (FindObjectOfType<PlanetSetting>().gold - buyCount * p.Price < 0)
                 {
                     buyCount -= num;
-                    Debug.Log("µ· ¾øÀ½");
+                    FindObjectOfType<ErrorIMG>().PrintErrorMessage("Not Monney");
                     return;
                 }
                 if (p.Count + buyCount > 100)
                 {
                     buyCount = 100 - p.Count;
                     buytext.text = $"buy: {buyCount}";
-                    Debug.Log("ÃÖ´ë °¹¼ö");
+                    FindObjectOfType<ErrorIMG>().PrintErrorMessage("Max Buy Count");
                     return;
                 }
                 buytext.text = $"buy: {buyCount}";
@@ -57,6 +57,7 @@ public class BuyAndSell : MonoBehaviour
                 if (p.Count - sellCount < 1)
                 {
                     sellCount = p.Count-1;
+                    FindObjectOfType<ErrorIMG>().PrintErrorMessage("Max Sell count");
                     Debug.Log("ÃÖ´ë ÆÇ¸Å °¹¼ö");
                     if (sellCount <= 0)
                         sellCount = 1;
@@ -75,9 +76,13 @@ public class BuyAndSell : MonoBehaviour
             if (p.planetName.ToString() == planetNameText.text)
             {
                 if (FindObjectOfType<PlanetSetting>().planets[i - 1].Count == 0)
+                {
+                    FindObjectOfType<ErrorIMG>().PrintErrorMessage("You Must Buy Before Planet");
                     return;
+                }
                 if (p.Count + buyCount > 100)
                 {
+                    FindObjectOfType<ErrorIMG>().PrintErrorMessage("Max buy count");
                     Debug.Log("ÃÖ´ë ±¸¸Å °¹¼ö");
                     return;
                 }
@@ -99,6 +104,7 @@ public class BuyAndSell : MonoBehaviour
             {
                 if (p.Count - sellCount < 1)
                 {
+                    FindObjectOfType<ErrorIMG>().PrintErrorMessage("Max Sell count");
                     Debug.Log("ÃÖ´ë ÆÇ¸Å °¹¼ö");
                     return;
                 }
