@@ -1574,6 +1574,81 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &757048232
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 757048234}
+  - component: {fileID: 757048233}
+  m_Layer: 0
+  m_Name: PlanetSetting
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &757048233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757048232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd87dbf9371909f4cbf936745c029317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gold: 0
+  planets:
+  - planetName: 0
+    Price: 1
+    Count: 0
+  - planetName: 1
+    Price: 2
+    Count: 0
+  - planetName: 2
+    Price: 3
+    Count: 0
+  - planetName: 3
+    Price: 4
+    Count: 0
+  - planetName: 4
+    Price: 5
+    Count: 0
+  - planetName: 5
+    Price: 6
+    Count: 0
+  - planetName: 6
+    Price: 7
+    Count: 0
+  - planetName: 7
+    Price: 8
+    Count: 0
+  - planetName: 8
+    Price: 9
+    Count: 0
+  - planetName: 9
+    Price: 10
+    Count: 0
+--- !u!4 &757048234
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757048232}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &827560415
 GameObject:
   m_ObjectHideFlags: 0

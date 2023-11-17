@@ -11,8 +11,9 @@ public struct PlanetSet
 
 public class PlanetSetting : MonoBehaviour
 {
-    
+    public int gold=0;
     public PlanetSet[] planets=new PlanetSet[10]; 
+
     private void Awake()
     {
         DontDestroyOnLoad(this);
