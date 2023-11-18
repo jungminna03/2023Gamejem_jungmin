@@ -35,7 +35,6 @@ public class Ore : MonoBehaviour
 
 
         }
-        ScoreManager.Instance.CheckEndGame(transform.position.y);
     }
     IEnumerator CreateAnimation()
     {
