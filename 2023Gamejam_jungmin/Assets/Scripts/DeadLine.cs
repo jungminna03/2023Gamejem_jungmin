@@ -34,8 +34,11 @@ public class DeadLine : MonoBehaviour
             return;
         checkob = o.gameObject;
         DataBase.Instance.Fame = (int)Mathf.Min(DataBase.Instance.Fame ,1.3f);
+        Invoke("Startparticle",0.5f);
+    }
+    private void Startparticle()
+    {
         StartCoroutine("isOnParticle");
-        
     }
 
     private IEnumerator isOnParticle()
