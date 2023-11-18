@@ -10,17 +10,21 @@ public class TutorialScripts : MonoBehaviour
     {
         public string[] Dialogs = new string[0];
     }
+    [SerializeField]
+    private TextMeshProUGUI Text;
 
     public tutorialScripts[] ts = new tutorialScripts[0];
     private int TutorialNum = 0;
     private bool isRun = false;
-    private void Awake()
+  
+    private void Start()
     {
         StartScripts(TutorialNum);
     }
-    public void Update()
+
+    private void Update()
     {
-        if (Input.GetKey(KeyCode.F) && !isRun)
+        if (Input.GetKeyDown(KeyCode.F) && !isRun)
         {
             Debug.Log("A");
             
@@ -38,7 +42,7 @@ public class TutorialScripts : MonoBehaviour
         foreach (var dialog in dialogs.Dialogs)
         {
             Debug.Log("dialog");
-            GetComponent<TextMeshProUGUI>().text = dialog;
+            Text.text = dialog;
             while (true)
             {
                 if (Input.GetMouseButtonDown(0))
