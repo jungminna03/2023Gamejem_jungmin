@@ -43,34 +43,4 @@ public class ScoreManager : MonoBehaviour
     {
         return _score;
     }
-
-    public void CheckEndGame(float y)
-    {
-        if (y > _deadline)
-        {
-            _score *= -1;
-            DataBase.Instance.Fame = (int)Mathf.Min(DataBase.Instance.Fame * 1.3f);
-            StartCoroutine("isOnParticle");
-        }
-        else
-        {
-            StopCoroutine("isOnParticle");
-            particleObject.gameObject.SetActive(false);
-        }
-    }
-
-    private IEnumerator isOnParticle()
-    {
-        particleObject.gameObject.SetActive(true);
-        while (true)
-        {
-            if (particleObject.IsAlive() == false)
-            {
-                spawner.StopSpawn();
-                _gameOverButton.gameObject.SetActive(true); 
-                break;
-            }
-            yield return null;
-        }
-    }
 }
