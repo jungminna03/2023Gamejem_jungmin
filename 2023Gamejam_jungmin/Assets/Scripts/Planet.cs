@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Planet : MonoBehaviour
 {
@@ -9,10 +11,15 @@ public class Planet : MonoBehaviour
     [SerializeField] int _price;
     [SerializeField] GameObject _buyButton;
     bool _onClicked = false;
+
+    private Text _buyText;
     
     void Start()
     {
         _buyButton.SetActive(false);
+        _buyText = _buyButton.GetComponentInChildren<Text>();
+        _buyText.fontSize = 18;
+        _buyText.text = "АЁАн: " + _price.ToString();
     }
 
     public void OnClicked()
@@ -50,4 +57,6 @@ public class Planet : MonoBehaviour
             SoundManager.GetInstance.PlaySound(Define.Sound.BuyButton);
         }
     }
+
+
 }
