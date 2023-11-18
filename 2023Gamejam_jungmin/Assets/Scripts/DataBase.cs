@@ -10,6 +10,8 @@ public class DataBase : MonoBehaviour
     public int _level = 1;
     public int _fame = 100;
     public int _money = 100;
+    public bool _tutorial1_check=false;
+    public bool _tutorial2_check = false;
 
     void Start()
     {
