@@ -27,8 +27,7 @@ public class Ore : MonoBehaviour
 
             GameObject.Destroy(collision.gameObject);
             GameObject.Destroy(gameObject);
-
-            ScoreManager.Instance.CheckEndGame(transform.position.y);
         }
+        ScoreManager.Instance.CheckEndGame(transform.position.y);
     }
 }

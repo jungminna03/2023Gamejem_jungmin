@@ -15,6 +15,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] Text _scoreText;
 
     [SerializeField] ParticleSystem particleObject;
+    [SerializeField] Spawner spawner;
 
     public static void Init()
     {
@@ -47,6 +48,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (y > _deadline)
         {
+            spawner.StopSpawn();
             _score *= -1;
             DataBase.Instance._fame = (int)Mathf.Min(DataBase.Instance._fame * 1.3f);
             StartCoroutine("isOnParticle");

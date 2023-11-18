@@ -1960,6 +1960,7 @@ MonoBehaviour:
   _gameOverButton: {fileID: 1758929265}
   _scoreText: {fileID: 2061380411}
   particleObject: {fileID: 2493375255048130665}
+  spawner: {fileID: 817624824}
 --- !u!4 &2104013107
 Transform:
   m_ObjectHideFlags: 0
