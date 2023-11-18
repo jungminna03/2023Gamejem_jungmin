@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StoryDialog : MonoBehaviour
 {
@@ -58,7 +59,9 @@ public class StoryDialog : MonoBehaviour
         c.a = 1;
         textMeshPro.color = c;
         if (m_way != dialogs.Length)
-        StartDialog(m_way++);
+            StartDialog(m_way++);
+        else
+            SceneManager.LoadScene("Lobby");
         
 
     }
