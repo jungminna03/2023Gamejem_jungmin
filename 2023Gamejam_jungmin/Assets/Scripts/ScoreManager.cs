@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -8,6 +9,10 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager Instance { get { Init(); return _instance; } }
 
     [SerializeField] int _score = 0;
+
+    [SerializeField] float _deadline ;
+    [SerializeField] GameObject _gameOverButton;
+    [SerializeField] Text _scoreText;
 
     public static void Init()
     {
@@ -28,10 +33,21 @@ public class ScoreManager : MonoBehaviour
     public void AddScore(int score)
     {
         _score += score;
+        _scoreText.text = _score.ToString();
     }
 
     public int GetScore()
     {
         return _score;
+    }
+
+    public void CheckEndGame(float y)
+    {
+        if (y > _deadline)
+        {
+            _score *= -1;
+            DataBase.Instance._fame = (int)Mathf.Min(DataBase.Instance._fame * 1.3f);
+            _gameOverButton.SetActive(true);
+        }
     }
 }
