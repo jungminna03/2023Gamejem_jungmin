@@ -9,5 +9,6 @@ public class GameOverButton : MonoBehaviour
     {
         gameObject.SetActive(false);
         SceneManager.LoadScene((int)Define.Scenes.Lobby);
+        Time.timeScale = 1.0f;
     }
 }

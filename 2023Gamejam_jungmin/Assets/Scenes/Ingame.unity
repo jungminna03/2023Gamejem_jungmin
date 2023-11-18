@@ -706,6 +706,8 @@ MonoBehaviour:
   _currentOre: {fileID: 0}
   _horizontalSpeed: 0.1
   _isSelect: 0
+  _finishPanel: {fileID: 1758929265}
+  _currentCount: 0
 --- !u!114 &817624824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -718,7 +720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a74b9c0344ddfb4aae05f8d57f855d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnWaitTime: 1
+  _spawnWaitTime: 0.5
   _currnetOre: {fileID: 0}
   _nextOre: {fileID: 0}
   _ableOres:
@@ -1430,7 +1432,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1758929266
 RectTransform:
   m_ObjectHideFlags: 0

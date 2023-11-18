@@ -12,38 +12,33 @@ public class Spawner : MonoBehaviour
 
     [SerializeField] GameObject[] _ableOres;
 
+    float _currentTime = 0;
+
+    bool _stopSpawn = false;
+    bool _endSpawn = false;
     private void Awake()
     {
         _inputHandler = FindObjectOfType<InputHandler>();
     }
-    private void Start()
+
+    private void Update()
     {
-        StartCoroutine(FirstSpawnOre());
-    }
-    public IEnumerator SpawnOre()
-    {
-        yield return new WaitForSeconds(_spawnWaitTime);
+        if (_currentTime >= _spawnWaitTime && _stopSpawn == false && _endSpawn == false)
+        {
+            _currnetOre = _nextOre;
+            _nextOre = RandomOre();
 
-        _currnetOre = _nextOre;
-        _nextOre = RandomOre();
+            if (_currnetOre != null)
+            {
+                GameObject go = Instantiate(_currnetOre, gameObject.transform);
+                _inputHandler._currentOre = go;
 
-        GameObject go = Instantiate(_currnetOre, gameObject.transform);
-        _inputHandler._currentOre = go;
+                _currentTime = 0;
+                _stopSpawn = true;
+            }
+        }
 
-        yield return null;
-    }
-
-    public IEnumerator FirstSpawnOre()
-    {
-        yield return new WaitForSeconds(_spawnWaitTime);
-
-        _currnetOre = RandomOre();
-        _nextOre = RandomOre();
-
-        GameObject go = Instantiate(_currnetOre, gameObject.transform);
-        _inputHandler._currentOre = go;
-
-        yield return null;
+        _currentTime += Time.deltaTime;
     }
 
     GameObject RandomOre()
@@ -60,5 +55,17 @@ public class Spawner : MonoBehaviour
         }
 
         return null;
+    }
+
+    public void Respawn()
+    {
+        _stopSpawn = false;
+        _currentTime = 0;
+    }
+
+    public void StopSpawn()
+    {
+        _endSpawn = true;
+        _currentTime = 0;
     }
 }

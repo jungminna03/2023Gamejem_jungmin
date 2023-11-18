@@ -9,6 +9,11 @@ public class Ore : MonoBehaviour
     [SerializeField] int _point;
     [SerializeField] GameObject _nextOre;
 
+    private void Awake()
+    {
+        ScoreManager.Instance.AddScore(_point);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Ore ore = collision.gameObject.GetComponent<Ore>();
@@ -21,9 +26,6 @@ public class Ore : MonoBehaviour
 
             GameObject.Destroy(collision.gameObject);
             GameObject.Destroy(gameObject);
-
-
-            ScoreManager.Instance.AddScore(_point);
         }
     }
 }

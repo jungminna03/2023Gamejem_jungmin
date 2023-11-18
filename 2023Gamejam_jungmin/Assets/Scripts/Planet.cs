@@ -9,7 +9,6 @@ public class Planet : MonoBehaviour
     [SerializeField] int _price;
     [SerializeField] GameObject _buyButton;
     bool _onClicked = false;
-    bool _onBuyed = false;
     
     void Start()
     {
@@ -27,7 +26,7 @@ public class Planet : MonoBehaviour
             _onClicked = true;
         }
 
-        if (_onBuyed == false)
+        if (DataBase.Instance._level < _level)
         {
             _buyButton.SetActive(_onClicked);
         }
@@ -35,7 +34,7 @@ public class Planet : MonoBehaviour
 
     public void OnBuy()
     {
-        if (_price > DataBase.Instance._money)
+        if (_price >= DataBase.Instance._money)
         {
             // TODO : µ∑ ∫Œ¡∑ UI
             Debug.Log("µ∑¿Ã ∫Œ¡∑«’¥œ¥Ÿ");
@@ -43,6 +42,8 @@ public class Planet : MonoBehaviour
         else
         {
             DataBase.Instance._level = _level;
+            DataBase.Instance._money -= _price;
+            _buyButton.SetActive(false);
         }
     }
 }

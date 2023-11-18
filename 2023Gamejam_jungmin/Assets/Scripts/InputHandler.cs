@@ -9,6 +9,10 @@ public class InputHandler : MonoBehaviour
     [SerializeField] float _horizontalSpeed = 0.001f;
     [SerializeField] bool _isSelect;
 
+    [SerializeField] GameObject _finishPanel;
+
+    public int _currentCount = 0;
+
     private void Awake()
     {
         _spawner = FindObjectOfType<Spawner>();
@@ -49,13 +53,29 @@ public class InputHandler : MonoBehaviour
         {
             if (Input.GetMouseButtonUp(0) && _currentOre != null)
             {
+                ++_currentCount;
+
+                if (_currentCount >= DataBase.Instance._fame / 30)
+                {
+                    StartCoroutine("EndGame");
+                    _spawner.StopSpawn();
+                }
+
+                _spawner.Respawn();
                 _currentOre.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-                _currentOre = null;
-                StartCoroutine(_spawner.SpawnOre());
                 _isSelect = false;
+                _currentOre = null;
             }
         }
     }
 
+    IEnumerator EndGame()
+    {
+        yield return new WaitForSeconds(3);
 
+        _finishPanel.SetActive(true);
+        DataBase.Instance._money += ScoreManager.Instance.GetScore();
+        DataBase.Instance._fame = (int)Mathf.Min(DataBase.Instance._fame * 1.3f);
+        Time.timeScale = 0;
+    }
 }
