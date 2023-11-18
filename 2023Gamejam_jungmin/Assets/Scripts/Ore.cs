@@ -25,6 +25,7 @@ public class Ore : MonoBehaviour
 
         if (collision.gameObject.tag == "Item")
         {
+
             _invincible = false;
         }
 
