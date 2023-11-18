@@ -9,6 +9,7 @@ public class Define
         Title,
         Lobby,
         Ingame,
+        Story,
     }
 
     public enum Sound 
