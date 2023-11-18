@@ -477,8 +477,9 @@ MonoBehaviour:
   _level: 5
   _price: 8000
   _buyButton: {fileID: 1714350052}
-  _clickecd: {fileID: 21300000, guid: 81f324bc0ae23654485cfd04729096f5, type: 3}
+  _clicked: {fileID: 21300000, guid: 81f324bc0ae23654485cfd04729096f5, type: 3}
   _nonClicked: {fileID: 21300000, guid: 26a6bffcd1f48444396ab07c072c23ca, type: 3}
+  _onClicked: 0
 --- !u!114 &31145927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1412,8 +1413,9 @@ MonoBehaviour:
   _level: 11
   _price: 200000
   _buyButton: {fileID: 761218997}
-  _clickecd: {fileID: 0}
+  _clicked: {fileID: 0}
   _nonClicked: {fileID: 0}
+  _onClicked: 0
 --- !u!114 &239040014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2663,8 +2665,9 @@ MonoBehaviour:
   _level: 10
   _price: 100000
   _buyButton: {fileID: 1510936034}
-  _clickecd: {fileID: 21300000, guid: 29db969ef7252ab4d9431c8a1a9855ea, type: 3}
+  _clicked: {fileID: 0}
   _nonClicked: {fileID: 21300000, guid: 46b3baa55e99d7745aa068fa07c64cac, type: 3}
+  _onClicked: 0
 --- !u!114 &560737394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4739,8 +4742,9 @@ MonoBehaviour:
   _level: 9
   _price: 75000
   _buyButton: {fileID: 10740422}
-  _clickecd: {fileID: 21300000, guid: 478ab0f9a99f47745b5a693df033f152, type: 3}
+  _clicked: {fileID: 0}
   _nonClicked: {fileID: 21300000, guid: 9eca89ba4714ad14d9ac78ce8f93ab2a, type: 3}
+  _onClicked: 0
 --- !u!114 &823962526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5598,8 +5602,9 @@ MonoBehaviour:
   _level: 2
   _price: 100
   _buyButton: {fileID: 1716307310}
-  _clickecd: {fileID: 21300000, guid: 9906bf8490b902e4fb4d567ac957352a, type: 3}
+  _clicked: {fileID: 21300000, guid: 9906bf8490b902e4fb4d567ac957352a, type: 3}
   _nonClicked: {fileID: 21300000, guid: 5e0472535ced26f428a8f1a62113761c, type: 3}
+  _onClicked: 0
 --- !u!1 &985387168
 GameObject:
   m_ObjectHideFlags: 0
@@ -6755,8 +6760,9 @@ MonoBehaviour:
   _level: 12
   _price: 500000
   _buyButton: {fileID: 1745057627}
-  _clickecd: {fileID: 0}
+  _clicked: {fileID: 0}
   _nonClicked: {fileID: 0}
+  _onClicked: 0
 --- !u!114 &1299026803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7107,8 +7113,9 @@ MonoBehaviour:
   _level: 7
   _price: 30000
   _buyButton: {fileID: 1890971664}
-  _clickecd: {fileID: 21300000, guid: d146a21623a80d247ae02849a89f1af1, type: 3}
+  _clicked: {fileID: 21300000, guid: d146a21623a80d247ae02849a89f1af1, type: 3}
   _nonClicked: {fileID: 21300000, guid: 2fc8027edd7c5014c87802a718c04ab6, type: 3}
+  _onClicked: 0
 --- !u!114 &1366033624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7850,6 +7857,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1582289669}
   - component: {fileID: 1582289671}
+  - component: {fileID: 1582289670}
   m_Layer: 7
   m_Name: Content
   m_TagString: Untagged
@@ -7888,6 +7896,30 @@ RectTransform:
   m_AnchoredPosition: {x: 1539.9966, y: 0}
   m_SizeDelta: {x: 5000, y: 850}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &1582289670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582289668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 410e806b141e0124aabfe06e131498f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetList:
+  - {fileID: 983110794}
+  - {fileID: 1905330026}
+  - {fileID: 1718721661}
+  - {fileID: 31145924}
+  - {fileID: 31145924}
+  - {fileID: 2128634607}
+  - {fileID: 1794232935}
+  - {fileID: 823962523}
+  - {fileID: 560737391}
+  - {fileID: 239040011}
+  - {fileID: 1299026800}
 --- !u!114 &1582289671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8346,8 +8378,9 @@ MonoBehaviour:
   _level: 4
   _price: 4000
   _buyButton: {fileID: 1911414502}
-  _clickecd: {fileID: 21300000, guid: 544a37e62651bd7439f32d7186cc4b63, type: 3}
+  _clicked: {fileID: 21300000, guid: 544a37e62651bd7439f32d7186cc4b63, type: 3}
   _nonClicked: {fileID: 21300000, guid: f24baa8a16c67bc489796d0523baa486, type: 3}
+  _onClicked: 0
 --- !u!114 &1718721664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9136,8 +9169,9 @@ MonoBehaviour:
   _level: 8
   _price: 50000
   _buyButton: {fileID: 641454345}
-  _clickecd: {fileID: 21300000, guid: 46f4d4501652a5d468ccc8d48a1e5d5e, type: 3}
+  _clicked: {fileID: 0}
   _nonClicked: {fileID: 21300000, guid: 554302f599a9bc14e8c157436f1cd345, type: 3}
+  _onClicked: 0
 --- !u!114 &1794232938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9983,8 +10017,9 @@ MonoBehaviour:
   _level: 3
   _price: 1000
   _buyButton: {fileID: 1855682631}
-  _clickecd: {fileID: 21300000, guid: 7babd3661274f174b88457d82982da48, type: 3}
+  _clicked: {fileID: 21300000, guid: 7babd3661274f174b88457d82982da48, type: 3}
   _nonClicked: {fileID: 21300000, guid: 804c563278defb542bb29a6a2fc3d87b, type: 3}
+  _onClicked: 0
 --- !u!114 &1905330029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11021,8 +11056,9 @@ MonoBehaviour:
   _level: 6
   _price: 15000
   _buyButton: {fileID: 1945286805}
-  _clickecd: {fileID: 21300000, guid: 6afe45701cfce0348a401309789aed03, type: 3}
+  _clicked: {fileID: 21300000, guid: 6afe45701cfce0348a401309789aed03, type: 3}
   _nonClicked: {fileID: 21300000, guid: 3fc244c67029a3b4f9d3fe2d4aefdd75, type: 3}
+  _onClicked: 0
 --- !u!114 &2128634610
 MonoBehaviour:
   m_ObjectHideFlags: 0

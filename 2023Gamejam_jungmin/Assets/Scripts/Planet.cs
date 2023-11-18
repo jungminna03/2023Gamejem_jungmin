@@ -10,14 +10,14 @@ public class Planet : MonoBehaviour
 
     [SerializeField] int _price;
     [SerializeField] GameObject _buyButton;
-    [SerializeField] Sprite _clickecd;
+    [SerializeField] Sprite _clicked;
     [SerializeField] Sprite _nonClicked;
     
-    bool _onClicked = false;
+    [HideInInspector]
+    public bool _onClicked = false;
 
     private TextMeshProUGUI _buyText;
 
-    
     void Start()
     {
         _buyButton.SetActive(false);
@@ -39,6 +39,7 @@ public class Planet : MonoBehaviour
 
     public void OnClicked()
     {
+        GetComponentInParent<PlanetSelector>().FindOnClicked();
         if (_onClicked)
         {
             _onClicked = false;
@@ -47,7 +48,7 @@ public class Planet : MonoBehaviour
         else
         {
             _onClicked = true;
-            GetComponent<Image>().sprite = _clickecd;
+            GetComponent<Image>().sprite = _clicked;
         }
 
         if (DataBase.Instance._level < _level)
@@ -56,6 +57,12 @@ public class Planet : MonoBehaviour
         }
 
         SoundManager.GetInstance.PlaySound(Define.Sound.PLANETSELECT);
+    }
+
+    public void OffClick()
+    {
+        _onClicked = false;
+        GetComponent<Image>().sprite = _nonClicked;
     }
 
     public void OnBuy()
