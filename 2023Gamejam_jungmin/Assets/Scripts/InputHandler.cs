@@ -71,7 +71,7 @@ public class InputHandler : MonoBehaviour
 
     IEnumerator EndGame()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         DataBase.Instance.Fame = (int)(DataBase.Instance.Fame *1.3f);
         _finishPanel.SetActive(true);
     }
