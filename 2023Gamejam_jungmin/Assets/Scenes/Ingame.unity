@@ -1439,7 +1439,6 @@ GameObject:
   - component: {fileID: 1695903904}
   - component: {fileID: 1695903907}
   - component: {fileID: 1695903906}
-  - component: {fileID: 1695903903}
   m_Layer: 0
   m_Name: GameOverLine
   m_TagString: Untagged
@@ -1461,20 +1460,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1695903903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1695903901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 367d24a3fceced2489d4d001568d683f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _gameOverUI: {fileID: 1758929265}
-  _gameOverBar: {fileID: 1695903902}
 --- !u!23 &1695903904
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1893,6 +1878,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _score: 0
+  _deadline: 3
+  _gameOverButton: {fileID: 1758929265}
 --- !u!4 &2104013107
 Transform:
   m_ObjectHideFlags: 0

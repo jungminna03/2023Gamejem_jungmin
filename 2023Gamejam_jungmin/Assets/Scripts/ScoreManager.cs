@@ -9,6 +9,9 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] int _score = 0;
 
+    [SerializeField] float _deadline ;
+    [SerializeField] GameObject _gameOverButton;
+
     public static void Init()
     {
         if (_instance == null)
@@ -33,5 +36,15 @@ public class ScoreManager : MonoBehaviour
     public int GetScore()
     {
         return _score;
+    }
+
+    public void CheckEndGame(float y)
+    {
+        if (y > _deadline)
+        {
+            _score *= -1;
+            DataBase.Instance._fame = (int)Mathf.Min(DataBase.Instance._fame * 1.3f);
+            _gameOverButton.SetActive(true);
+        }
     }
 }
