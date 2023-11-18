@@ -9,7 +9,7 @@ public class Planet : MonoBehaviour
     public int _level;
 
     [SerializeField] int _price;
-    [SerializeField] GameObject _buyButton;
+    public GameObject _buyButton;
     [SerializeField] Sprite _clicked;
     [SerializeField] Sprite _nonClicked;
     
@@ -80,6 +80,7 @@ public class Planet : MonoBehaviour
             _buyButton.SetActive(false);
             SoundManager.GetInstance.PlaySound(Define.Sound.BuyButton);
             GetComponent<Image>().sprite = _nonClicked;
+            MyOres.GetInstance.AddOre();
         }
     }
 
