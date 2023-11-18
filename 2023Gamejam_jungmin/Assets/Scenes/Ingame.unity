@@ -2370,7 +2370,7 @@ MonoBehaviour:
   - {fileID: 4093348655035743626, guid: b5561867f39df784ea4e371b88f96399, type: 3}
   - {fileID: 2450065583287287465, guid: be98ee02054101243994fd7bd41ec8a8, type: 3}
   - {fileID: 3448302384992714574, guid: 469fb6bdb141ce54d82aee2a36d7f927, type: 3}
-  - {fileID: 0}
+  - {fileID: 3448302384992714574, guid: 469fb6bdb141ce54d82aee2a36d7f927, type: 3}
   - {fileID: 8647862243615900487, guid: aee85d34ac86333439130dfad389c163, type: 3}
 --- !u!4 &797620754
 Transform:
