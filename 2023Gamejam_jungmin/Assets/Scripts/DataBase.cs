@@ -7,7 +7,7 @@ public class DataBase : MonoBehaviour
     static DataBase _instance;
     public static DataBase Instance { get { Init(); return _instance; } }
 
-    public int _level;
+    public int _level = 1;
     public int _objCount;
     public int _money;
 

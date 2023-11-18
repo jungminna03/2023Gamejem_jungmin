@@ -7,7 +7,7 @@ public class Define
     public enum Scenes
     {
         Title,
+        Lobby,
         Ingame,
-        Lobby
     }
 }

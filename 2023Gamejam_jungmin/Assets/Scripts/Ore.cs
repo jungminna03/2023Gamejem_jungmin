@@ -13,7 +13,7 @@ public class Ore : MonoBehaviour
     {
         Ore ore = collision.gameObject.GetComponent<Ore>();
 
-        if (ore != null && ore._count == _count && _nextOre != null && collision.transform.position.y > transform.position.y)
+        if (ore != null && ore._count == _count && _nextOre != null && collision.transform.position.y > transform.position.y && _count < DataBase.Instance._level)
         {
             GameObject go = GameObject.Instantiate(_nextOre);
             go.transform.position = transform.position;
