@@ -42,7 +42,7 @@ public class Ore : MonoBehaviour
         {
             yield return null;
             transform.position = Vector3.MoveTowards(transform.position,
-                deleteGameObject.transform.position, 1.5f * Time.deltaTime);
+                deleteGameObject.transform.position, 4.0f * Time.deltaTime);
 
             if (Vector2.Distance(transform.position, deleteGameObject.transform.position) < 0.3f)
             {
