@@ -34,7 +34,6 @@ public class Ore : MonoBehaviour
                 return;
             ore._isCreate = true;
 
-            SoundManager.GetInstance.PlaySound(Define.Sound.ItemCombine);
             transform.GetComponent<CircleCollider2D>().enabled = false;
             transform.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             _deleteGameObject = collision.gameObject;
@@ -57,6 +56,8 @@ public class Ore : MonoBehaviour
         }
         GameObject go = GameObject.Instantiate(_nextOre);
         go.transform.position = transform.position;
+        EffectManager.instance.PlayEffect((Define.Effect)(_count), go.transform.position);
+        SoundManager.GetInstance.PlaySound(Define.Sound.ItemCombine);
         go.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
 
         GameObject.Destroy(_deleteGameObject);

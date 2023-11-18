@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EffectManager : MonoBehaviour
 {
-    private static EffectManager instance;
-
+    public static EffectManager instance;
+    [SerializeField] GameObject[] _effectList;
 
 
     private void Awake()
@@ -21,8 +21,20 @@ public class EffectManager : MonoBehaviour
         }
     }
 
+    public static EffectManager GetInstance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                return null;
+            }
+            return instance;
+        }
+    }
+
     public void PlayEffect(Define.Effect effect, Vector3 position)
     {
-
+        Instantiate(_effectList[(int)effect], position, new Quaternion(0, 0, 0, 0));
     }
 }
