@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UI_Lobby : MonoBehaviour
 {
-    [SerializeField] Text _currentMoney;
-    [SerializeField] Text _objCount;
+    [SerializeField] TextMeshProUGUI _currentMoney;
+    [SerializeField] TextMeshProUGUI _objCount;
 
     private void Update()
     {
