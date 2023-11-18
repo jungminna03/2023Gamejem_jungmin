@@ -209,7 +209,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 663157783}
         m_TargetAssemblyTypeName: SceneTransition, Assembly-CSharp
-        m_MethodName: OnLobbyButton
+        m_MethodName: OnStoryButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
