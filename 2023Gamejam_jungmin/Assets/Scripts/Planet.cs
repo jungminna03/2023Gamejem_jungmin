@@ -21,8 +21,6 @@ public class Planet : MonoBehaviour
     void Start()
     {
         _buyButton.SetActive(false);
-        _buyText = _buyButton.GetComponentInChildren<TextMeshProUGUI>();
-        _buyText.text = "가격: " + _price.ToString();
     }
 
     private void Update()
@@ -54,6 +52,8 @@ public class Planet : MonoBehaviour
         if (DataBase.Instance._level < _level)
         {
             _buyButton.SetActive(_onClicked);
+            _buyText = _buyButton.GetComponentInChildren<TextMeshProUGUI>();
+            _buyText.text = "가격: " + _price.ToString();
         }
 
         SoundManager.GetInstance.PlaySound(Define.Sound.PLANETSELECT);
