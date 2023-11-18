@@ -9,6 +9,9 @@ public class Ore : MonoBehaviour
     [SerializeField] int _point;
     [SerializeField] GameObject _nextOre;
 
+    GameObject deleteGameObject;
+    public bool IsCreate = false;
+
     private void Awake()
     {
         ScoreManager.Instance.AddScore(_point);
@@ -18,21 +21,44 @@ public class Ore : MonoBehaviour
     {
         Ore ore = collision.gameObject.GetComponent<Ore>();
 
-        if (ore != null && ore._count == _count && _nextOre != null && collision.transform.position.y > transform.position.y && _count < DataBase.Instance._level)
+        if (ore != null && ore._count == _count && _nextOre != null && collision.transform.position.y < transform.position.y && _count < DataBase.Instance._level)
         {
-            SoundManager.GetInstance.PlaySound(Define.Sound.ItemCombine);
-            GameObject go = GameObject.Instantiate(_nextOre);
-            go.transform.position = transform.position;
-            go.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+            if (ore.IsCreate || IsCreate)
+                return;
+            ore.IsCreate = true;
 
-            GameObject.Destroy(collision.gameObject);
-            GameObject.Destroy(gameObject);
+            SoundManager.GetInstance.PlaySound(Define.Sound.ItemCombine);
+            transform.GetComponent<CircleCollider2D>().enabled = false;
+            transform.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            deleteGameObject = collision.gameObject;
+            StartCoroutine("CreateAnimation");
+
+
         }
         ScoreManager.Instance.CheckEndGame(transform.position.y);
     }
-
-    private void OnCollisionExit2D(Collision2D collision)
+    IEnumerator CreateAnimation()
     {
-        ScoreManager.Instance.CheckEndGame(transform.position.y);
+        while (true)
+        {
+            yield return null;
+            transform.position = Vector3.MoveTowards(transform.position,
+                deleteGameObject.transform.position, 1.5f * Time.deltaTime);
+
+            if (Vector2.Distance(transform.position, deleteGameObject.transform.position) < 0.3f)
+            {
+                break;
+            }
+
+        }
+        GameObject go = GameObject.Instantiate(_nextOre);
+        go.transform.position = transform.position;
+        go.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+
+        GameObject.Destroy(deleteGameObject);
+        GameObject.Destroy(gameObject);
+
     }
+
 }
+
