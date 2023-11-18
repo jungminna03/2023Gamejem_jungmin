@@ -36,7 +36,7 @@ public class Planet : MonoBehaviour
 
     public void OnBuy()
     {
-        if (_price > DataBase.Instance._money)
+        if (_price > DataBase.Instance.Money)
         {
             // TODO : µ∑ ∫Œ¡∑ UI
             Debug.Log("µ∑¿Ã ∫Œ¡∑«’¥œ¥Ÿ");
@@ -45,7 +45,7 @@ public class Planet : MonoBehaviour
         else
         {
             DataBase.Instance._level = _level;
-            DataBase.Instance._money -= _price;
+            DataBase.Instance.Money -= _price;
             _buyButton.SetActive(false);
             SoundManager.GetInstance.PlaySound(Define.Sound.BuyButton);
         }

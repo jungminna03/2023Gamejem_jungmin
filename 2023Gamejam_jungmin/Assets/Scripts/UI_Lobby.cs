@@ -10,7 +10,7 @@ public class UI_Lobby : MonoBehaviour
 
     private void Update()
     {
-        _currentMoney.text = $"$ {DataBase.Instance._money}";
-        _objCount.text = $"명성 : {DataBase.Instance._fame}";
+        _currentMoney.text = $"$ {DataBase.Instance.Money}";
+        _objCount.text = $"명성 : {DataBase.Instance.Fame}";
     }
 }

@@ -21,9 +21,9 @@ public class GameOverPanel : MonoBehaviour
         _moneyText = GameObject.Find("MoneyText").GetComponent <TextMeshProUGUI>();
 
         _currentScore = ScoreManager.Instance.GetScore();
-        _currentMoney = DataBase.Instance._money;
+        _currentMoney = DataBase.Instance.Money;
 
-        DataBase.Instance._money += _currentScore;
+        DataBase.Instance.Money += _currentScore;
     }
 
     void Update()
@@ -40,7 +40,7 @@ public class GameOverPanel : MonoBehaviour
     private void OnEnable()
     {
         _scoreText.text = ($"Score : {ScoreManager.Instance.GetScore()}");
-        _moneyText.text = ($"Money : {DataBase.Instance._money}");
+        _moneyText.text = ($"Money : {DataBase.Instance.Money}");
         _startTimeDelta = 0;
     }
 }

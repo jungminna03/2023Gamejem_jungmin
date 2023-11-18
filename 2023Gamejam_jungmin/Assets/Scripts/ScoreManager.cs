@@ -49,7 +49,7 @@ public class ScoreManager : MonoBehaviour
         if (y > _deadline)
         {
             _score *= -1;
-            DataBase.Instance._fame = (int)Mathf.Min(DataBase.Instance._fame * 1.3f);
+            DataBase.Instance.Fame = (int)Mathf.Min(DataBase.Instance.Fame * 1.3f);
             StartCoroutine("isOnParticle");
         }
         else

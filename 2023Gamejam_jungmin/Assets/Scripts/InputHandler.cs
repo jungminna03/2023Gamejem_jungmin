@@ -55,7 +55,7 @@ public class InputHandler : MonoBehaviour
             {
                 ++_currentCount;
 
-                if (_currentCount >= DataBase.Instance._fame / 30)
+                if (_currentCount >= DataBase.Instance.Fame / 30)
                 {
                     StartCoroutine("EndGame");
                     _spawner.StopSpawn();
