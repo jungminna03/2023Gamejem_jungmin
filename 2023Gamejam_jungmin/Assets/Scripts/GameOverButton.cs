@@ -11,7 +11,7 @@ public class GameOverButton : MonoBehaviour
     }
     public void LoadLobbyScene()
     {
-        SoundManager.GetInstance.PlaySound(Define.Sound.Start);
+        // SoundManager.GetInstance.PlaySound(Define.Sound.Start);
         gameObject.SetActive(false);
         SceneManager.LoadScene((int)Define.Scenes.Lobby);
         Time.timeScale = 1.0f;

@@ -100,6 +100,8 @@ MonoBehaviour:
   _count: 7
   _point: 2000
   _nextOre: {fileID: 1388104976928978551, guid: 1e298131b9b790043a65e767710db646, type: 3}
+  _isCreate: 0
+  _invincible: 1
 --- !u!50 &-2784114834563312744
 Rigidbody2D:
   serializedVersion: 4
