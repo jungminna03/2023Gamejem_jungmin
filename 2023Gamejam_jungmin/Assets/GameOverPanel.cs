@@ -32,8 +32,8 @@ public class GameOverPanel : MonoBehaviour
 
         if(_startTimeDelta > _startTime)
         {
-            _scoreText.text = ($"Score: {(int)Mathf.Lerp(_currentMoney, _currentMoney + _currentScore, _startTimeDelta - _startTime)}");
-            _moneyText.text = ($"Money: {(int)Mathf.Lerp(_currentScore, 0, _startTimeDelta - _startTime)}"); 
+            _scoreText.text = ($"Score: {(int)Mathf.Lerp(_currentScore, 0, _startTimeDelta)}");
+            _moneyText.text = ($"Money: {(int)Mathf.Lerp(_currentMoney, _currentMoney + _currentScore, _startTimeDelta)}"); 
         }
     }
 
@@ -42,6 +42,5 @@ public class GameOverPanel : MonoBehaviour
         _scoreText.text = ($"Score : {ScoreManager.Instance.GetScore()}");
         _moneyText.text = ($"Money : {DataBase.Instance._money}");
         _startTimeDelta = 0;
-        DataBase.Instance._money += ScoreManager.Instance.GetScore();
     }
 }
