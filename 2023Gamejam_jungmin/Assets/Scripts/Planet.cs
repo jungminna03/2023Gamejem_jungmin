@@ -30,6 +30,8 @@ public class Planet : MonoBehaviour
         {
             _buyButton.SetActive(_onClicked);
         }
+
+        SoundManager.GetInstance.PlaySound(Define.Sound.PLANETSELECT);
     }
 
     public void OnBuy()
@@ -38,12 +40,14 @@ public class Planet : MonoBehaviour
         {
             // TODO : µ∑ ∫Œ¡∑ UI
             Debug.Log("µ∑¿Ã ∫Œ¡∑«’¥œ¥Ÿ");
+            SoundManager.GetInstance.PlaySound(Define.Sound.Error);
         }
         else
         {
             DataBase.Instance._level = _level;
             DataBase.Instance._money -= _price;
             _buyButton.SetActive(false);
+            SoundManager.GetInstance.PlaySound(Define.Sound.BuyButton);
         }
     }
 }

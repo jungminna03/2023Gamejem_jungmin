@@ -74,8 +74,5 @@ public class InputHandler : MonoBehaviour
         yield return new WaitForSeconds(3);
 
         _finishPanel.SetActive(true);
-        DataBase.Instance._money += ScoreManager.Instance.GetScore();
-        DataBase.Instance._fame = (int)Mathf.Min(DataBase.Instance._fame * 1.3f);
-        Time.timeScale = 0;
     }
 }

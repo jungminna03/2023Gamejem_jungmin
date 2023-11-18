@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Spawner : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class Spawner : MonoBehaviour
     [SerializeField] GameObject _nextOre;
 
     [SerializeField] GameObject[] _ableOres;
+
+    [SerializeField] Image _nextOreImage;
 
     float _currentTime = 0;
 
@@ -27,10 +30,12 @@ public class Spawner : MonoBehaviour
         {
             _currnetOre = _nextOre;
             _nextOre = RandomOre();
+            _nextOreImage.sprite = _nextOre.GetComponent<SpriteRenderer>().sprite;
 
             if (_currnetOre != null)
             {
                 GameObject go = Instantiate(_currnetOre, gameObject.transform);
+                SoundManager.GetInstance.PlaySound(Define.Sound.ItemSpawn);
                 _inputHandler._currentOre = go;
 
                 _currentTime = 0;
