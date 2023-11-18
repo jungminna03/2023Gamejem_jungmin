@@ -24,21 +24,17 @@ public class GameOverPanel : MonoBehaviour
 
         if(_startTimeDelta > _startTime)
         {
-            _scoreText.text = Mathf.Lerp(ScoreManager.Instance._score, 0, _changeSpeed * Time.deltaTime).ToString();
-            _moneyText.text = Mathf.Lerp(DataBase.Instance._money, DataBase.Instance._money + ScoreManager.Instance._score, _changeSpeed * Time.deltaTime).ToString();
+
+            _scoreText.text = ($"Score: {ScoreManager.Instance.GetScore()}");
+            _moneyText.text = ($"Score: {Mathf.Lerp(DataBase.Instance._money, DataBase.Instance._money + ScoreManager.Instance.GetScore(), 5 / Time.deltaTime).ToString()}"); 
         }
     }
 
     private void OnEnable()
     {
-        _scoreText.text = ($"Score : {ScoreManager.Instance._score}");
+        _scoreText.text = ($"Score : {ScoreManager.Instance.GetScore()}");
         _moneyText.text = ($"Money : {DataBase.Instance._money}");
-    }
-
-    public void ChangeValue()
-    {
-        DataBase.Instance._money += ScoreManager.Instance.GetScore();
-
         _startTimeDelta = 0;
+        DataBase.Instance._money += ScoreManager.Instance.GetScore();
     }
 }
