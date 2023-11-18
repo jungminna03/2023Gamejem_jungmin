@@ -48,6 +48,7 @@ public class DeadLine : MonoBehaviour
             if (checkob.transform.position.y < _deadline)
             {
                 StopCoroutine("isOnParticle");
+                checkob = null;
                 particleObject.gameObject.SetActive(false);
                 break;
             }
