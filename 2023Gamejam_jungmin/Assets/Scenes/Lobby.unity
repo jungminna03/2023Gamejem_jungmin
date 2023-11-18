@@ -443,7 +443,7 @@ RectTransform:
   m_GameObject: {fileID: 31145924}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 1714350053}
   m_Father: {fileID: 1582289669}
@@ -469,6 +469,8 @@ MonoBehaviour:
   _level: 5
   _price: 8000
   _buyButton: {fileID: 1714350052}
+  _clickecd: {fileID: 21300000, guid: 81f324bc0ae23654485cfd04729096f5, type: 3}
+  _nonClicked: {fileID: 21300000, guid: 26a6bffcd1f48444396ab07c072c23ca, type: 3}
 --- !u!114 &31145927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1180,7 +1182,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &239040012
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1216,6 +1218,8 @@ MonoBehaviour:
   _level: 11
   _price: 200000
   _buyButton: {fileID: 761218997}
+  _clickecd: {fileID: 0}
+  _nonClicked: {fileID: 0}
 --- !u!114 &239040014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2296,7 +2300,7 @@ RectTransform:
   m_GameObject: {fileID: 560737391}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 1510936035}
   m_Father: {fileID: 1582289669}
@@ -2322,6 +2326,8 @@ MonoBehaviour:
   _level: 10
   _price: 100000
   _buyButton: {fileID: 1510936034}
+  _clickecd: {fileID: 21300000, guid: 29db969ef7252ab4d9431c8a1a9855ea, type: 3}
+  _nonClicked: {fileID: 21300000, guid: 46b3baa55e99d7745aa068fa07c64cac, type: 3}
 --- !u!114 &560737394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3327,7 +3333,7 @@ RectTransform:
   m_GameObject: {fileID: 823962523}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 10740423}
   m_Father: {fileID: 1582289669}
@@ -3353,6 +3359,8 @@ MonoBehaviour:
   _level: 9
   _price: 75000
   _buyButton: {fileID: 10740422}
+  _clickecd: {fileID: 21300000, guid: 478ab0f9a99f47745b5a693df033f152, type: 3}
+  _nonClicked: {fileID: 21300000, guid: 9eca89ba4714ad14d9ac78ce8f93ab2a, type: 3}
 --- !u!114 &823962526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3839,7 +3847,7 @@ RectTransform:
   m_GameObject: {fileID: 983110794}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 1716307311}
   m_Father: {fileID: 1582289669}
@@ -3959,6 +3967,8 @@ MonoBehaviour:
   _level: 2
   _price: 100
   _buyButton: {fileID: 1716307310}
+  _clickecd: {fileID: 21300000, guid: 9906bf8490b902e4fb4d567ac957352a, type: 3}
+  _nonClicked: {fileID: 21300000, guid: 5e0472535ced26f428a8f1a62113761c, type: 3}
 --- !u!1 &1040418695
 GameObject:
   m_ObjectHideFlags: 0
@@ -4262,6 +4272,8 @@ MonoBehaviour:
   _level: 12
   _price: 500000
   _buyButton: {fileID: 1745057627}
+  _clickecd: {fileID: 0}
+  _nonClicked: {fileID: 0}
 --- !u!114 &1299026803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4385,7 +4397,7 @@ RectTransform:
   m_GameObject: {fileID: 1366033621}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 1890971665}
   m_Father: {fileID: 1582289669}
@@ -4411,6 +4423,8 @@ MonoBehaviour:
   _level: 7
   _price: 30000
   _buyButton: {fileID: 1890971664}
+  _clickecd: {fileID: 21300000, guid: d146a21623a80d247ae02849a89f1af1, type: 3}
+  _nonClicked: {fileID: 21300000, guid: 2fc8027edd7c5014c87802a718c04ab6, type: 3}
 --- !u!114 &1366033624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5217,7 +5231,7 @@ RectTransform:
   m_GameObject: {fileID: 1718721661}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 1911414503}
   m_Father: {fileID: 1582289669}
@@ -5243,6 +5257,8 @@ MonoBehaviour:
   _level: 4
   _price: 4000
   _buyButton: {fileID: 1911414502}
+  _clickecd: {fileID: 21300000, guid: 544a37e62651bd7439f32d7186cc4b63, type: 3}
+  _nonClicked: {fileID: 21300000, guid: f24baa8a16c67bc489796d0523baa486, type: 3}
 --- !u!114 &1718721664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5746,7 +5762,7 @@ RectTransform:
   m_GameObject: {fileID: 1794232935}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 641454346}
   m_Father: {fileID: 1582289669}
@@ -5772,6 +5788,8 @@ MonoBehaviour:
   _level: 8
   _price: 50000
   _buyButton: {fileID: 641454345}
+  _clickecd: {fileID: 21300000, guid: 46f4d4501652a5d468ccc8d48a1e5d5e, type: 3}
+  _nonClicked: {fileID: 21300000, guid: 554302f599a9bc14e8c157436f1cd345, type: 3}
 --- !u!114 &1794232938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6240,7 +6258,7 @@ RectTransform:
   m_GameObject: {fileID: 1905330026}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 1855682632}
   m_Father: {fileID: 1582289669}
@@ -6266,6 +6284,8 @@ MonoBehaviour:
   _level: 3
   _price: 1000
   _buyButton: {fileID: 1855682631}
+  _clickecd: {fileID: 21300000, guid: 7babd3661274f174b88457d82982da48, type: 3}
+  _nonClicked: {fileID: 21300000, guid: 804c563278defb542bb29a6a2fc3d87b, type: 3}
 --- !u!114 &1905330029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6947,7 +6967,7 @@ RectTransform:
   m_GameObject: {fileID: 2128634607}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 1945286806}
   m_Father: {fileID: 1582289669}
@@ -6973,6 +6993,8 @@ MonoBehaviour:
   _level: 6
   _price: 15000
   _buyButton: {fileID: 1945286805}
+  _clickecd: {fileID: 21300000, guid: 6afe45701cfce0348a401309789aed03, type: 3}
+  _nonClicked: {fileID: 21300000, guid: 3fc244c67029a3b4f9d3fe2d4aefdd75, type: 3}
 --- !u!114 &2128634610
 MonoBehaviour:
   m_ObjectHideFlags: 0
