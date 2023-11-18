@@ -31,6 +31,7 @@ public class Spawner : MonoBehaviour
             if (_currnetOre != null)
             {
                 GameObject go = Instantiate(_currnetOre, gameObject.transform);
+                SoundManager.GetInstance.PlaySound(Define.Sound.ItemSpawn);
                 _inputHandler._currentOre = go;
 
                 _currentTime = 0;

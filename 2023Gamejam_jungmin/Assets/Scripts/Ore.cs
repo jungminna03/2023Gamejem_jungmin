@@ -20,6 +20,7 @@ public class Ore : MonoBehaviour
 
         if (ore != null && ore._count == _count && _nextOre != null && collision.transform.position.y > transform.position.y && _count < DataBase.Instance._level)
         {
+            SoundManager.GetInstance.PlaySound(Define.Sound.ItemCombine);
             GameObject go = GameObject.Instantiate(_nextOre);
             go.transform.position = transform.position;
             go.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;

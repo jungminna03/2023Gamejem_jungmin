@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public enum ClipName { PLANETSELECT, ENDBUYING, }
+
 
 public class SoundManager : MonoBehaviour
 {
@@ -29,22 +29,20 @@ public class SoundManager : MonoBehaviour
     }
 
     //테스트 용
-    private ClipName clipName;
-
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.A))
         { 
-            PlaySound(ClipName.PLANETSELECT);
+            PlaySound(Define.Sound.PLANETSELECT);
         }
         else if(Input.GetKeyDown(KeyCode.S))
         {
-            PlaySound(ClipName.ENDBUYING);
+            PlaySound(Define.Sound.ENDBUYING);
         }
     }
     //==============================================
 
-    public static SoundManager getInstance
+    public static SoundManager GetInstance
     {
         get
         {
@@ -56,7 +54,7 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void PlaySound(ClipName clipName)
+    public void PlaySound(Define.Sound clipName)
     {
         if (audioSource.isPlaying)
         {

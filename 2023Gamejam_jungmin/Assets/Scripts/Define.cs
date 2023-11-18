@@ -10,4 +10,17 @@ public class Define
         Lobby,
         Ingame,
     }
+
+    public enum Sound { 
+        PLANETSELECT, 
+        ENDBUYING, 
+        Error, 
+        Start, 
+        PauseButton,
+        BuyButton,
+        Settlement,
+        ItemSpawn,
+        ItemCombine,
+        ItemCollision,
+    }
 }

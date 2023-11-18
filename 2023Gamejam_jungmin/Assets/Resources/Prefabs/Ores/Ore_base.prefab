@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -3824979948639253162}
   m_Layer: 0
   m_Name: Ore_base
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _count: 0
+  _point: 0
   _nextOre: {fileID: 0}
 --- !u!50 &-2784114834563312744
 Rigidbody2D:
