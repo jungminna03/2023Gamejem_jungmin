@@ -21,7 +21,12 @@ public class TutorialScripts : MonoBehaviour
     int TutorialSceneNum;
     private void Start()
     {
-        if (TutorialSceneNum==1 && DataBase.Instance._tutorial1_check==false)
+        Invoke("StartTutorial", 0.5f);
+    }
+
+    private void StartTutorial()
+    {
+        if (TutorialSceneNum == 1 && DataBase.Instance._tutorial1_check == false)
             StartScripts(0);
         if (TutorialSceneNum == 2 && DataBase.Instance._tutorial2_check == false)
             StartScripts(0);

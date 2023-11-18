@@ -22,6 +22,18 @@ public class Planet : MonoBehaviour
         _buyText.text = "АЁАн: " + _price.ToString();
     }
 
+    private void Update()
+    {
+        if (DataBase.Instance._level + 1 < _level)
+        {
+            GetComponent<Button>().interactable = false;
+        }
+        else
+        {
+            GetComponent<Button>().interactable = true;
+        }
+    }
+
     public void OnClicked()
     {
         if (_onClicked)
