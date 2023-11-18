@@ -14,6 +14,9 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] GameObject _gameOverButton;
     [SerializeField] Text _scoreText;
 
+    [SerializeField] ParticleSystem particleObject;
+    [SerializeField] Spawner spawner;
+
     public static void Init()
     {
         if (_instance == null)
@@ -45,9 +48,24 @@ public class ScoreManager : MonoBehaviour
     {
         if (y > _deadline)
         {
+            spawner.StopSpawn();
             _score *= -1;
             DataBase.Instance._fame = (int)Mathf.Min(DataBase.Instance._fame * 1.3f);
-            _gameOverButton.SetActive(true);
+            StartCoroutine("isOnParticle");
+        }
+    }
+
+    private IEnumerator isOnParticle()
+    {
+        particleObject.gameObject.SetActive(true);
+        while (true)
+        {
+            if (particleObject.IsAlive() == false)
+            {
+                _gameOverButton.gameObject.SetActive(true); 
+                break;
+            }
+            yield return null;
         }
     }
 }
