@@ -8,8 +8,8 @@ public class DataBase : MonoBehaviour
     public static DataBase Instance { get { Init(); return _instance; } }
 
     public int _level = 1;
-    int _fame = 100;
-    int _money = 100;
+    [SerializeField] int _fame = 100;
+    [SerializeField] int _money = 100;
     public bool _tutorial1_check=false;
     public bool _tutorial2_check = false;
 

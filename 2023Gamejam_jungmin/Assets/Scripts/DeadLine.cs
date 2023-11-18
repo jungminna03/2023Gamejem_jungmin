@@ -13,14 +13,14 @@ public class DeadLine : MonoBehaviour
     [SerializeField] ParticleSystem particleObject;
     [SerializeField] Spawner spawner;
 
-    GameObject checkob;
+    [SerializeField] GameObject checkob;
     private void Update()
     {
         Ore[] ores = FindObjectsOfType<Ore>();
         foreach (Ore o in ores)
         {
-            if (o.transform.position.y> _deadline &&
-                FindObjectOfType<InputHandler>()._currentOre!= o.gameObject)
+            if (o.transform.position.y > _deadline &&
+                FindObjectOfType<InputHandler>()._currentOre != o.gameObject)
             {
                 CheckEndGame(o);
             }
@@ -33,9 +33,11 @@ public class DeadLine : MonoBehaviour
         if (checkob != null)
             return;
         checkob = o.gameObject;
-        DataBase.Instance.Fame = (int)Mathf.Min(DataBase.Instance.Fame ,1.3f);
+        Invoke("Startparticle",0.5f);
+    }
+    private void Startparticle()
+    {
         StartCoroutine("isOnParticle");
-        
     }
 
     private IEnumerator isOnParticle()
@@ -46,12 +48,14 @@ public class DeadLine : MonoBehaviour
             if (checkob.transform.position.y < _deadline)
             {
                 StopCoroutine("isOnParticle");
+                checkob = null;
                 particleObject.gameObject.SetActive(false);
                 break;
             }
             if (particleObject.IsAlive() == false)
             {
                 spawner.StopSpawn();
+                DataBase.Instance.Fame = (int)(DataBase.Instance.Fame * 0.7f);
                 _gameOverButton.gameObject.SetActive(true);
                 break;
             }
