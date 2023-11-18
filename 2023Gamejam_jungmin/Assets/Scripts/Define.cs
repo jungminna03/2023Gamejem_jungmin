@@ -11,7 +11,8 @@ public class Define
         Ingame,
     }
 
-    public enum Sound { 
+    public enum Sound 
+    { 
         PLANETSELECT, 
         ENDBUYING, 
         Error, 
@@ -22,5 +23,10 @@ public class Define
         ItemSpawn,
         ItemCombine,
         ItemCollision,
+    }
+
+    public enum Effect
+    {
+
     }
 }
