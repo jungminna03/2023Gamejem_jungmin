@@ -15,14 +15,13 @@ public class Planet : MonoBehaviour
     
     bool _onClicked = false;
 
-    private Text _buyText;
+    private TextMeshProUGUI _buyText;
 
     
     void Start()
     {
         _buyButton.SetActive(false);
-        _buyText = _buyButton.GetComponentInChildren<Text>();
-        _buyText.fontSize = 18;
+        _buyText = _buyButton.GetComponentInChildren<TextMeshProUGUI>();
         _buyText.text = "АЁАн: " + _price.ToString();
     }
 
