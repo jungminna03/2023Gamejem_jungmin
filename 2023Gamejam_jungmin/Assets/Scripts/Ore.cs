@@ -25,6 +25,10 @@ public class Ore : MonoBehaviour
 
         if (collision.gameObject.tag == "Item")
         {
+            Vector3 middle = transform.position - collision.transform.position;
+            middle = middle / 2;
+            middle = (middle / 2) + collision.transform.position;
+            EffectManager.instance.PlayEffect(Define.Effect.COLLISION, middle);
 
             _invincible = false;
         }
