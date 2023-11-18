@@ -14,7 +14,7 @@ public class DeadLine : MonoBehaviour
     {
         Ore ore = collision.GetComponent<Ore>();
 
-        if (ore != null && ore._invincible == false)
+        if (ore != null && ore._invincible == false && ore.GetComponent<CircleCollider2D>().enabled == true)
         {
             _gameOverButton.SetActive(true);
             _spawner.StopSpawn();
