@@ -14,9 +14,6 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] GameObject _gameOverButton;
     [SerializeField] Text _scoreText;
 
-    [SerializeField] ParticleSystem particleObject;
-    [SerializeField] Spawner spawner;
-
     public static void Init()
     {
         if (_instance == null)
