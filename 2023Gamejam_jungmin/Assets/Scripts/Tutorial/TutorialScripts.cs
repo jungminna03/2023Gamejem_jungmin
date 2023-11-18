@@ -29,6 +29,10 @@ public class TutorialScripts : MonoBehaviour
     {
         nextDialog = true;
     }
+    public void StopDialog()
+    {
+        StopCoroutine("PrintScripts");
+    }
     IEnumerator PrintScripts(tutorialScripts dialogs)
     {
         TextIMG.SetActive(true);
