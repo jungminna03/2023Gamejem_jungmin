@@ -6,59 +6,18 @@ public class DeadLine : MonoBehaviour
 {
     static ScoreManager _instance;
 
-
-    [SerializeField] float _deadline;
     [SerializeField] GameObject _gameOverButton;
 
-    [SerializeField] ParticleSystem particleObject;
-    [SerializeField] Spawner spawner;
+    [SerializeField] Spawner _spawner;
 
-    [SerializeField] GameObject checkob;
-    private void Update()
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        Ore[] ores = FindObjectsOfType<Ore>();
-        foreach (Ore o in ores)
-        {
-            if (o.transform.position.y > _deadline &&
-                FindObjectOfType<InputHandler>()._currentOre != o.gameObject)
-            {
-                CheckEndGame(o);
-            }
-        }
-    }
-    public void CheckEndGame(Ore o)
-    {
-        if (o.gameObject == checkob)
-            return;
-        if (checkob != null)
-            return;
-        checkob = o.gameObject;
-        Invoke("Startparticle",0.5f);
-    }
-    private void Startparticle()
-    {
-        StartCoroutine("isOnParticle");
-    }
+        Ore ore = collision.GetComponent<Ore>();
 
-    private IEnumerator isOnParticle()
-    {
-        particleObject.gameObject.SetActive(true);
-        while (true)
+        if (ore != null && ore._invincible == false)
         {
-            if (checkob.transform.position.y < _deadline)
-            {
-                StopCoroutine("isOnParticle");
-                particleObject.gameObject.SetActive(false);
-                break;
-            }
-            if (particleObject.IsAlive() == false)
-            {
-                spawner.StopSpawn();
-                DataBase.Instance.Fame = (int)(DataBase.Instance.Fame * 0.7f);
-                _gameOverButton.gameObject.SetActive(true);
-                break;
-            }
-            yield return null;
+            _gameOverButton.SetActive(true);
+            _spawner.StopSpawn();
         }
     }
 }

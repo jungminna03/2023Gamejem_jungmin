@@ -9,8 +9,10 @@ public class Ore : MonoBehaviour
     [SerializeField] int _point;
     [SerializeField] GameObject _nextOre;
 
-    GameObject deleteGameObject;
-    public bool IsCreate = false;
+    GameObject _deleteGameObject;
+    public bool _isCreate = false;
+
+    public bool _invincible = true;
 
     private void Awake()
     {
@@ -21,19 +23,22 @@ public class Ore : MonoBehaviour
     {
         Ore ore = collision.gameObject.GetComponent<Ore>();
 
+        if (collision.gameObject.tag == "Item")
+        {
+            _invincible = false;
+        }
+
         if (ore != null && ore._count == _count && _nextOre != null && collision.transform.position.y < transform.position.y && _count < DataBase.Instance._level)
         {
-            if (ore.IsCreate || IsCreate)
+            if (ore._isCreate || _isCreate)
                 return;
-            ore.IsCreate = true;
+            ore._isCreate = true;
 
             SoundManager.GetInstance.PlaySound(Define.Sound.ItemCombine);
             transform.GetComponent<CircleCollider2D>().enabled = false;
             transform.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-            deleteGameObject = collision.gameObject;
+            _deleteGameObject = collision.gameObject;
             StartCoroutine("CreateAnimation");
-
-
         }
     }
     IEnumerator CreateAnimation()
@@ -42,9 +47,9 @@ public class Ore : MonoBehaviour
         {
             yield return null;
             transform.position = Vector3.MoveTowards(transform.position,
-                deleteGameObject.transform.position, 1.5f * Time.deltaTime);
+                _deleteGameObject.transform.position, 1.5f * Time.deltaTime);
 
-            if (Vector2.Distance(transform.position, deleteGameObject.transform.position) < 0.3f)
+            if (Vector2.Distance(transform.position, _deleteGameObject.transform.position) < 0.3f)
             {
                 break;
             }
@@ -54,7 +59,7 @@ public class Ore : MonoBehaviour
         go.transform.position = transform.position;
         go.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
 
-        GameObject.Destroy(deleteGameObject);
+        GameObject.Destroy(_deleteGameObject);
         GameObject.Destroy(gameObject);
 
     }
