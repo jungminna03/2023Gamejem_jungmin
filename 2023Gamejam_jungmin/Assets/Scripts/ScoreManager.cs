@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] float _deadline ;
     [SerializeField] GameObject _gameOverButton;
+    [SerializeField] Text _scoreText;
 
     public static void Init()
     {
@@ -31,6 +33,7 @@ public class ScoreManager : MonoBehaviour
     public void AddScore(int score)
     {
         _score += score;
+        _scoreText.text = _score.ToString();
     }
 
     public int GetScore()
