@@ -27,7 +27,7 @@ public class InputHandler : MonoBehaviour
             if(Input.GetAxis("Mouse X") > 0)
             {
                 
-                if (_currentOre.GetComponent<CircleCollider2D>().radius + _currentOre.transform.position.x > 3)
+                if (/*_currentOre.GetComponent<CircleCollider2D>().radius + */_currentOre.transform.position.x > 3 - _currentOre.GetComponent<CircleCollider2D>().radius)
                 {
                     return;
                 }
@@ -38,7 +38,7 @@ public class InputHandler : MonoBehaviour
             }
             else if(Input.GetAxis("Mouse X") < 0) 
             {
-                if (-_currentOre.GetComponent<CircleCollider2D>().radius + _currentOre.transform.position.x < -3)
+                if (/*-_currentOre.GetComponent<CircleCollider2D>().radius + */_currentOre.transform.position.x < -3 + _currentOre.GetComponent<CircleCollider2D>().radius)
                 {
                     return;
                 }
