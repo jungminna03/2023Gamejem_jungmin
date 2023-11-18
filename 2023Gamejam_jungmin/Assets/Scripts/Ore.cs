@@ -30,4 +30,9 @@ public class Ore : MonoBehaviour
         }
         ScoreManager.Instance.CheckEndGame(transform.position.y);
     }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        ScoreManager.Instance.CheckEndGame(transform.position.y);
+    }
 }

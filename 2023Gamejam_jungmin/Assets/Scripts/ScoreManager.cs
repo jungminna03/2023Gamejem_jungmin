@@ -48,10 +48,14 @@ public class ScoreManager : MonoBehaviour
     {
         if (y > _deadline)
         {
-            spawner.StopSpawn();
             _score *= -1;
             DataBase.Instance._fame = (int)Mathf.Min(DataBase.Instance._fame * 1.3f);
             StartCoroutine("isOnParticle");
+        }
+        else
+        {
+            StopCoroutine("isOnParticle");
+            particleObject.gameObject.SetActive(false);
         }
     }
 
@@ -62,6 +66,7 @@ public class ScoreManager : MonoBehaviour
         {
             if (particleObject.IsAlive() == false)
             {
+                spawner.StopSpawn();
                 _gameOverButton.gameObject.SetActive(true); 
                 break;
             }
