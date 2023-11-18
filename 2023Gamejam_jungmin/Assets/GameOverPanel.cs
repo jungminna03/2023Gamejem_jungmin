@@ -12,10 +12,18 @@ public class GameOverPanel : MonoBehaviour
     [SerializeField] float _startTime = 0.5f;
     float _startTimeDelta;
 
+    int _currentScore;
+    int _currentMoney;
+
     private void Awake()
     {
         _scoreText = GameObject.Find("ScoreText").GetComponent<TextMeshProUGUI>();
         _moneyText = GameObject.Find("MoneyText").GetComponent <TextMeshProUGUI>();
+
+        _currentScore = ScoreManager.Instance.GetScore();
+        _currentMoney = DataBase.Instance._money;
+
+        DataBase.Instance._money += _currentScore;
     }
 
     void Update()
@@ -24,9 +32,8 @@ public class GameOverPanel : MonoBehaviour
 
         if(_startTimeDelta > _startTime)
         {
-
-            _scoreText.text = ($"Score: {ScoreManager.Instance.GetScore()}");
-            _moneyText.text = ($"Score: {Mathf.Lerp(DataBase.Instance._money, DataBase.Instance._money + ScoreManager.Instance.GetScore(), 5 / Time.deltaTime).ToString()}"); 
+            _scoreText.text = ($"Score: {(int)Mathf.Lerp(_currentMoney, _currentMoney + _currentScore, _startTimeDelta - _startTime)}");
+            _moneyText.text = ($"Money: {(int)Mathf.Lerp(_currentScore, 0, _startTimeDelta - _startTime)}"); 
         }
     }
 
