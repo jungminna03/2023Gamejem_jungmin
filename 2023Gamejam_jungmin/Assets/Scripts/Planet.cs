@@ -10,9 +10,13 @@ public class Planet : MonoBehaviour
 
     [SerializeField] int _price;
     [SerializeField] GameObject _buyButton;
+    [SerializeField] Sprite _clickecd;
+    [SerializeField] Sprite _nonClicked;
+    
     bool _onClicked = false;
 
     private Text _buyText;
+
     
     void Start()
     {
@@ -39,10 +43,12 @@ public class Planet : MonoBehaviour
         if (_onClicked)
         {
             _onClicked = false;
+            GetComponent<Image>().sprite = _nonClicked;
         }
         else
         {
             _onClicked = true;
+            GetComponent<Image>().sprite = _clickecd;
         }
 
         if (DataBase.Instance._level < _level)
@@ -67,6 +73,7 @@ public class Planet : MonoBehaviour
             DataBase.Instance.Money -= _price;
             _buyButton.SetActive(false);
             SoundManager.GetInstance.PlaySound(Define.Sound.BuyButton);
+            GetComponent<Image>().sprite = _nonClicked;
         }
     }
 

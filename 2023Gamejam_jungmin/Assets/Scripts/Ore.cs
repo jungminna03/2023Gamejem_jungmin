@@ -28,7 +28,7 @@ public class Ore : MonoBehaviour
             _invincible = false;
         }
 
-        if (ore != null && ore._count == _count && _nextOre != null && collision.transform.position.y < transform.position.y && _count <= DataBase.Instance._level)
+        if (ore != null && ore._count == _count && _nextOre != null && collision.transform.position.y < transform.position.y && _count < DataBase.Instance._level)
         {
             if (ore._isCreate || _isCreate)
                 return;
