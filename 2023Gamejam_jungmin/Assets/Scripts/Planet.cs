@@ -34,7 +34,7 @@ public class Planet : MonoBehaviour
 
     public void OnBuy()
     {
-        if (_price >= DataBase.Instance._money)
+        if (_price > DataBase.Instance._money)
         {
             // TODO : µ∑ ∫Œ¡∑ UI
             Debug.Log("µ∑¿Ã ∫Œ¡∑«’¥œ¥Ÿ");
