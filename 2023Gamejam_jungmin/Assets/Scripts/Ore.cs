@@ -23,7 +23,7 @@ public class Ore : MonoBehaviour
 
         if (ore != null && ore._count == _count && _nextOre != null && collision.transform.position.y < transform.position.y && _count < DataBase.Instance._level)
         {
-            if (ore.IsCreate)
+            if (ore.IsCreate || IsCreate)
                 return;
             ore.IsCreate = true;
 
@@ -33,9 +33,6 @@ public class Ore : MonoBehaviour
             deleteGameObject = collision.gameObject;
             StartCoroutine("CreateAnimation");
 
-
-            GameObject.Destroy(collision.gameObject);
-            GameObject.Destroy(gameObject);
 
         }
         ScoreManager.Instance.CheckEndGame(transform.position.y);
