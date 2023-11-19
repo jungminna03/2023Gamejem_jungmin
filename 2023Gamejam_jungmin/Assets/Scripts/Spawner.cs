@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,7 +15,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] GameObject[] _ableOres;
 
     [SerializeField] Image _nextOreImage;
-
+    
     float _currentTime = 0;
 
     bool _stopSpawn = false;

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class InputHandler : MonoBehaviour
@@ -13,9 +14,14 @@ public class InputHandler : MonoBehaviour
 
     public int _currentCount = 0;
 
+    [SerializeField] int _leftOre;
+    [SerializeField] TextMeshProUGUI _leftOreText;
+
     private void Awake()
     {
         _spawner = FindObjectOfType<Spawner>();
+        _leftOre = DataBase.Instance.Fame / 30;
+        _leftOreText.text = _leftOre.ToString();
     }
 
     void Update()
@@ -55,12 +61,13 @@ public class InputHandler : MonoBehaviour
             {
                 ++_currentCount;
 
-                if (_currentCount >= DataBase.Instance.Fame / 30)
+                if (_currentCount >= _leftOre)
                 {
                     StartCoroutine("EndGame");
                     _spawner.StopSpawn();
                 }
 
+                _leftOreText.text = (_leftOre - _currentCount).ToString();
                 _spawner.Respawn();
                 _currentOre.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
                 _isSelect = false;
