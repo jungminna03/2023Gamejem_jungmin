@@ -25,7 +25,7 @@ public class Planet : MonoBehaviour
 
     private void Update()
     {
-        if (DataBase.Instance._level + 1 < _level)
+        if (DataBase.Instance.Level + 1 < _level)
         {
             GetComponent<Button>().interactable = false;
         }
@@ -48,7 +48,7 @@ public class Planet : MonoBehaviour
             GetComponent<Image>().sprite = _clicked;
         }
 
-        if (DataBase.Instance._level < _level)
+        if (DataBase.Instance.Level < _level)
         {
             _buyButton.SetActive(_onClicked);
             _buyText = _buyButton.GetComponentInChildren<TextMeshProUGUI>();
@@ -77,7 +77,7 @@ public class Planet : MonoBehaviour
         }
         else
         {
-            DataBase.Instance._level = _level;
+            DataBase.Instance.Level = _level;
             DataBase.Instance.Money -= _price;
             _buyButton.SetActive(false);
             SoundManager.GetInstance.PlaySound(Define.Sound.BuyButton);

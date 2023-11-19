@@ -49,10 +49,10 @@ public class Spawner : MonoBehaviour
 
     GameObject RandomOre()
     {
-        int rand = 100 / DataBase.Instance._level;
+        int rand = 100 / DataBase.Instance.Level;
         int weight = rand;
 
-        for (int i = 0; i < DataBase.Instance._level; ++i)
+        for (int i = 0; i < DataBase.Instance.Level; ++i)
         {
             if (weight > Random.Range(0, 100))
                 return _ableOres[i];

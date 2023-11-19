@@ -7,12 +7,24 @@ public class DataBase : MonoBehaviour
     static DataBase _instance;
     public static DataBase Instance { get { Init(); return _instance; } }
 
-    public int _level = 1;
+    [SerializeField] int _level = 1;
     [SerializeField] int _fame = 100;
     [SerializeField] int _money = 100;
     public bool _tutorial1_check=false;
     public bool _tutorial2_check = false;
 
+    public int Level
+    {
+        get { return _level; }
+        set 
+        { 
+            _level = value; 
+            if (_level == 10)
+            {
+                _level = 11;
+            }
+        }
+    }
     public int Fame
     {
         get { return _fame; }
