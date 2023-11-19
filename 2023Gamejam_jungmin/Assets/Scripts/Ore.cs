@@ -28,16 +28,20 @@ public class Ore : MonoBehaviour
             Vector3 middle = transform.position - collision.transform.position;
             middle = middle / 2;
             middle = (middle / 2) + collision.transform.position;
-            EffectManager.instance.PlayEffect(Define.Effect.COLLISION, middle);
+            float radius = gameObject.GetComponent<CircleCollider2D>().radius;
+            EffectManager.instance.PlayEffect(Define.Effect.COLLISION, new Vector3(middle.x + radius, middle.y + radius, middle.z + radius));
 
             _invincible = false;
         }
 
-        if (ore != null && ore._count == _count && _nextOre != null && collision.transform.position.y < transform.position.y && _count < DataBase.Instance.Level)
+        if (ore != null && ore._count == _count && _nextOre != null && collision.transform.position.y <= transform.position.y && _count < DataBase.Instance.Level)
         {
+            if (collision.transform.position.y == transform.position.y && collision.transform.position.x > gameObject.transform.position.x)
+                return; 
             if (ore._isCreate || _isCreate)
                 return;
             ore._isCreate = true;
+            _isCreate = true;
 
             transform.GetComponent<CircleCollider2D>().enabled = false;
             transform.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
