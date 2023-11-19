@@ -37,7 +37,6 @@ public class Planet : MonoBehaviour
 
     public void OnClicked()
     {
-        GetComponentInParent<PlanetSelector>().FindOnClicked();
         if (_onClicked)
         {
             _onClicked = false;
@@ -53,7 +52,9 @@ public class Planet : MonoBehaviour
         {
             _buyButton.SetActive(_onClicked);
             _buyText = _buyButton.GetComponentInChildren<TextMeshProUGUI>();
-            _buyText.text = "가격: " + _price.ToString();
+
+            if (_buyText != null) 
+                _buyText.text = "가격: " + _price.ToString();
         }
 
         SoundManager.GetInstance.PlaySound(Define.Sound.PLANETSELECT);
@@ -63,6 +64,7 @@ public class Planet : MonoBehaviour
     {
         _onClicked = false;
         GetComponent<Image>().sprite = _nonClicked;
+        _buyButton.SetActive(false);
     }
 
     public void OnBuy()
