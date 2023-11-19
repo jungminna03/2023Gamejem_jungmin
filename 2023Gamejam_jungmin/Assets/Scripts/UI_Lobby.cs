@@ -11,7 +11,7 @@ public class UI_Lobby : MonoBehaviour
 
     private void Update()
     {
-        _currentMoney.text = $"$ {DataBase.Instance.Money}";
-        _objCount.text = $"¸í¼º : {DataBase.Instance.Fame}";
+        _currentMoney.text = $"{DataBase.Instance.Money}";
+        _objCount.text = $"{DataBase.Instance.Fame}";
     }
 }
