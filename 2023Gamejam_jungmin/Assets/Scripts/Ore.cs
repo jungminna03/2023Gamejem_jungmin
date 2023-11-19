@@ -38,6 +38,7 @@ public class Ore : MonoBehaviour
             if (ore._isCreate || _isCreate)
                 return;
             ore._isCreate = true;
+            _isCreate = true;
 
             transform.GetComponent<CircleCollider2D>().enabled = false;
             transform.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;

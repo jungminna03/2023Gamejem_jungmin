@@ -21,8 +21,11 @@ public class StoryDialog : MonoBehaviour
     Animator anim;
     int m_way = 0;
 
+    private AudioSource m_audioSource;
+
     private void Start()
     {
+        m_audioSource = GetComponent<AudioSource>();
         anim=GetComponent<Animator>();
         StartDialog(m_way++);
     }
@@ -41,6 +44,7 @@ public class StoryDialog : MonoBehaviour
         {
             textMeshPro.text += d;
             yield return new WaitForSeconds(dialogtime.time);
+            m_audioSource.Play();
         }
         yield return new WaitForSeconds(0.5f);
         Color c = textMeshPro.color;
