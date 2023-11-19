@@ -26,7 +26,7 @@ public class InputHandler : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetMouseButton(0) && _currentOre != null)
+        if(Input.GetMouseButton(0) && _currentOre != null && _leftOre > 1)
         {
             _isSelect = true;
 
