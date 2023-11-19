@@ -897,8 +897,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: PLANET OWNER
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fa4cce92c5a785246917ba31a91f21ec, type: 2}
-  m_sharedMaterial: {fileID: 7571322058656743153, guid: fa4cce92c5a785246917ba31a91f21ec, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6f4700d9a04cf2d4a988184ef6dad7df, type: 2}
+  m_sharedMaterial: {fileID: -7371677680979491347, guid: 6f4700d9a04cf2d4a988184ef6dad7df, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1112,8 +1112,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Touch to start
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fa4cce92c5a785246917ba31a91f21ec, type: 2}
-  m_sharedMaterial: {fileID: 7571322058656743153, guid: fa4cce92c5a785246917ba31a91f21ec, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6f4700d9a04cf2d4a988184ef6dad7df, type: 2}
+  m_sharedMaterial: {fileID: -7371677680979491347, guid: 6f4700d9a04cf2d4a988184ef6dad7df, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
