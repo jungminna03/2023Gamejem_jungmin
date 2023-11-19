@@ -21,5 +21,9 @@ public class ActiveOres : MonoBehaviour
         {
             oreImage[i].GetComponent<Image>().color = new Color(255, 255, 255, 255);
         }
+        if (myOres+1 == oreImage.Length)
+        {
+            oreImage[myOres].GetComponent<Image>().color = new Color(255, 255, 255, 255);
+        }
     }
 }
