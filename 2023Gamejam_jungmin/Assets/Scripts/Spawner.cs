@@ -18,7 +18,7 @@ public class Spawner : MonoBehaviour
     
     float _currentTime = 0;
 
-    bool _stopSpawn = false;
+    public bool _stopSpawn = false;
     bool _endSpawn = false;
     private void Awake()
     {
