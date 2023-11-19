@@ -16,8 +16,16 @@ public class DeadLine : MonoBehaviour
 
         if (ore != null && ore._invincible == false && ore.GetComponent<CircleCollider2D>().enabled == true)
         {
-            _gameOverButton.SetActive(true);
+            Invoke("GameFinish", 2);
+            ScoreManager.Instance.AddScore(ScoreManager.Instance.GetScore() * -1);
             _spawner.StopSpawn();
+            GetComponent<SpriteRenderer>().enabled = true;
+            SoundManager.GetInstance.PlaySound(Define.Sound.Error);
         }
+    }
+
+    void GameFinish()
+    {
+        _gameOverButton.SetActive(true);
     }
 }
