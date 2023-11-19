@@ -5353,6 +5353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameOverButton: {fileID: 1758929265}
   _spawner: {fileID: 817624824}
+  _ground: {fileID: 1476761598}
 --- !u!212 &1695903904
 SpriteRenderer:
   m_ObjectHideFlags: 0

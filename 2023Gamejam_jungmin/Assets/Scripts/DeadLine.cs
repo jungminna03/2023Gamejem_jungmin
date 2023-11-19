@@ -9,7 +9,7 @@ public class DeadLine : MonoBehaviour
     [SerializeField] GameObject _gameOverButton;
 
     [SerializeField] Spawner _spawner;
-
+    [SerializeField] GameObject _ground;
     private void OnTriggerStay2D(Collider2D collision)
     {
         Ore ore = collision.GetComponent<Ore>();
@@ -21,6 +21,7 @@ public class DeadLine : MonoBehaviour
             _spawner.StopSpawn();
             GetComponent<SpriteRenderer>().enabled = true;
             SoundManager.GetInstance.PlaySound(Define.Sound.Error);
+            _ground.SetActive(false);
         }
     }
 
