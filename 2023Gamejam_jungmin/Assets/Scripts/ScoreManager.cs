@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +13,7 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] float _deadline ;
     [SerializeField] GameObject _gameOverButton;
-    [SerializeField] Text _scoreText;
+    [SerializeField] TextMeshProUGUI _scoreText;
 
     public static void Init()
     {
