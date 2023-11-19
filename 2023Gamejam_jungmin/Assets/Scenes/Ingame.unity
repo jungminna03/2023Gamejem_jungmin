@@ -3538,9 +3538,6 @@ MonoBehaviour:
     - "\uAC00\uACA9\uC774 \uB108\uBB34 \uC62C\uB77C\uAC00\uBA74 \uAD6C\uB9E4\uB97C
       \uAC70\uBD80\uD560 \uC9C0\uB3C4 \uBAB0\uB77C"
     CheckBox: {fileID: 1721105254}
-  - Dialogs:
-    - "\uD6C4... \uCCAB \uACBD\uB9E4 \uCE58\uACE0\uB294 \uB098\uC058\uC9C0 \uC54A\uC558\uC5B4"
-    CheckBox: {fileID: 323335358}
   TutorialSceneNum: 2
 --- !u!114 &1154723963
 MonoBehaviour:
@@ -6332,7 +6329,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1832412377
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6372,7 +6369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.33333334}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6117647}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
