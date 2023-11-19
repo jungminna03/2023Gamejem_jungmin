@@ -29,5 +29,6 @@ public class Define
     public enum Effect
     {
         COLLISION = 11,
+        Money,
     }
 }

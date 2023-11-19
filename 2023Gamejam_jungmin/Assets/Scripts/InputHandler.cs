@@ -81,5 +81,6 @@ public class InputHandler : MonoBehaviour
         yield return new WaitForSeconds(2);
         DataBase.Instance.Fame = (int)(DataBase.Instance.Fame *1.3f);
         _finishPanel.SetActive(true);
+        EffectManager.GetInstance.PlayEffect(Define.Effect.Money, transform.position);
     }
 }
